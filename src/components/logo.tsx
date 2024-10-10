@@ -1,7 +1,7 @@
-"use client";
-import Image from "next/image";
-import React from "react";
-import logo from "@public/images/logo.png";
+'use client';
+import Image from 'next/image';
+import React from 'react';
+import logo from '@public/images/logo.png';
 
 export interface LogoProps {
   className?: string;
@@ -13,24 +13,26 @@ const Logo = (props: LogoProps) => {
     <div
       onClick={(e) => {
         if (props.link) {
-          e.preventDefault(); 
-          location.href = props.link
+          e.preventDefault();
+          location.href = props.link;
         } else {
-          location.href = "/"
+          location.href = '/';
         }
       }}
-      className={`flex cursor-pointer items-center justify-center gap-2 font-semibold capitalize ${props.className ?? ""}`}
+      className={`flex cursor-pointer items-center justify-center gap-2 font-semibold capitalize ${
+        props.className ?? ''
+      }`}
     >
       <Image
         src={logo}
         alt="hero image"
         width={30}
         height={35}
-        className={props?.imageClass ?? ""}
+        className={props?.imageClass ?? ''}
       />
-      {"Brain"}
-      <span className="contents text-[#0B80E0]">AI</span>
-      {"Tools"}
+
+      <span className="contents text-[#0B80E0]">In</span>
+      {'shortan urls'}
     </div>
   );
 };

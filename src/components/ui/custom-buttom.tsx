@@ -6,7 +6,7 @@ interface ButtonProps {
   label: string | undefined;
   className?: string;
   type?: "button" | "submit" | "reset" | undefined;
-  callback?: () => void | Promise<void> | undefined;
+  onClick?: () => void | Promise<void> | undefined; 
   prefixIcon?: React.ReactNode;
   suffixIcon?: React.ReactNode;
   isDisabled?: boolean
@@ -15,7 +15,7 @@ interface ButtonProps {
 const CustomButton = ({
   label = "",
   type = "button",
-  callback,
+  onClick, 
   className,
   prefixIcon,
   suffixIcon,
@@ -24,10 +24,11 @@ const CustomButton = ({
   const { pending: disabled } = useFormStatus();
 
   const handleButtonClick = async () => {
-    if (typeof callback === "function") {
-      await callback();
+    if (typeof onClick === "function") {
+      await onClick(); 
     }
   };
+
   return (
     <button
       disabled={disabled || isDisabled}
