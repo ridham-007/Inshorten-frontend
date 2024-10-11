@@ -1,10 +1,10 @@
-'use client';
-import { Montserrat } from 'next/font/google';
-import '@/styles/globals.css';
-import Header from './_header/page';
-import Footer from './_footer/page';
+"use client";
+import { Montserrat } from "next/font/google";
+import "@/styles/globals.css";
+import Header from "./_header/page";
+import Footer from "./_footer/page";
 
-const inter = Montserrat({ subsets: ['latin'] });
+const inter = Montserrat({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -12,20 +12,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={'en'} suppressHydrationWarning>
+    <html lang={"en"} suppressHydrationWarning>
       <head></head>
       <body
         className={`${inter.className} flex w-full h-dvh justify-center`}
         suppressHydrationWarning={true}
         style={{
           backgroundImage: "url('/images/background.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed', 
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
         }}
       >
-        <div className="flex flex-col w-full px-3 sm:px-10 ">
+        <div className="flex flex-col w-full px-3 sm:px-10  ">
           <Header />
           {children}
           <Footer />

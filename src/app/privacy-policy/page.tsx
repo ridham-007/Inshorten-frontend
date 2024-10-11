@@ -147,7 +147,7 @@ export default async function PrivacyPolicy({
     },
   ];
   return (
-    <main className="flex w-full flex-col flex-wrap h-auto gap-2 bg-white px-5 md:px-10">
+    <main className="flex w-full flex-col flex-wrap h-auto gap-2 bg-white px-5 md:px-10 mt-10">
       <h1 className="flex w-full flex-col text-white text-xl lg:text-3xl font-semibold items-center px-8 py-4 md:py-6 lg:py-12  bg-gradient-to-br from-[#0B80E0] to-[#77b6e9]  my-5">
         Privacy Policy
       </h1>

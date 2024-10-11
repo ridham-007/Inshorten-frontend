@@ -22,7 +22,7 @@ export default function NotFound() {
             type="button"
             onClick={() => router.replace("/")}
             label={"Back to home"}
-            className="mt-[52px] py-2 text-lg w-[250px] h-[50px]"
+            className="mt-[52px] py-2 text-lg w-[250px] h-[50px] bg-black"
           ></CustomButton>
         </div>
       </div>

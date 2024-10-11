@@ -1,11 +1,16 @@
-import StaticUrl from '@/components/static-url';
-import React from 'react';
+import StaticUrl from "@/components/static-url";
+import Content from "@/components/content";
+import React from "react";
 
 const StaticUrlLayout = () => {
   return (
     <>
-      <div className="flex w-full">
+      <div className="flex flex-col w-full ">
         <StaticUrl />
+        <Content
+          title="A fast and simple URL shortener"
+          description="ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and sites."
+        />
       </div>
     </>
   );
