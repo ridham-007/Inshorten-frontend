@@ -36,23 +36,23 @@ const Information = () => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row w-full  justify-between px-3 md:px-8 gap-7 mt-[150px]">
-        <div className="flex flex-col w-full lg:max-w-[800px] gap-10">
-          <div className="flex flex-col gap-1">
-            <div className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] ">
+      <div className="flex flex-col lg:flex-row w-full  justify-between px-3 md:px-8 gap-7 mt-[150px] ">
+        <div className="flex flex-col w-full lg:max-w-[800px] gap-10 sm:self-start self-center">
+          <div className="flex flex-col gap-1 sm:self-start self-center">
+            <div className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] sm:text-left text-center ">
               Generate QR Codes & short Link with InShorten
             </div>
-            <div className="text-[14px] sm:text-[16px] text-gray-500 font-normal">
+            <div className="text-[14px] sm:text-[16px] text-gray-500 font-normal sm:text-left text-center ">
               Simple, Fast & Free. Bringing back the good days!
             </div>
           </div>
           <CustomButton
             label={"Generate Now"}
-            className="!w-full max-w-[200px] bg-black"
+            className="!w-full max-w-[200px] bg-black sm:self-start self-center"
           />
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 sm:self-start self-center">
             <div className="font-bold text-gray-700">Explore More</div>
-            <div className="w-full max-w-[350px] md:max-w-[600px] grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="w-full max-w-[350px] md:max-w-[600px] grid grid-cols-2 md:grid-cols-3 gap-4 ">
               {items.map((item, index) => (
                 <div
                   key={index}
