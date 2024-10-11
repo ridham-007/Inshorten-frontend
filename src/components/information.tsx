@@ -11,19 +11,19 @@ const Information = () => {
 
   const items = [
     {
-      icon: <PiLink className="text-[26px] sm:text-[32px]" />,
+      icon: <PiLink className="text-[26px] sm:text-[30px]" />,
       title: "Static URL ",
       description: "Create short url",
       route: "/static-url",
     },
     {
-      icon: <PiLinkSimpleBold className="text-[26px] sm:text-[32px]" />,
+      icon: <PiLinkSimpleBold className="text-[26px] sm:text-[30px]" />,
       title: "Dynamic URL ",
       description: "This url is editable",
       route: "/dynamic-url",
     },
     {
-      icon: <IoQrCodeOutline className="text-[26px] sm:text-[32px]" />,
+      icon: <IoQrCodeOutline className="text-[26px] sm:text-[30px]" />,
       title: " QR Code",
       description: "Create QR Code",
       route: "/qr-code",
@@ -36,34 +36,34 @@ const Information = () => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row w-full  justify-between px-3 md:px-8 gap-7 mt-[150px] ">
-        <div className="flex flex-col w-full lg:max-w-[800px] gap-10 sm:self-start self-center">
-          <div className="flex flex-col gap-1 sm:self-start self-center">
-            <div className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] sm:text-left text-center ">
+      <div className="flex flex-col lg:flex-row w-full justify-between px-3 md:px-8 gap-7 mt-[100px] sm:mt-[150px] ">
+        <div className="flex flex-col w-full lg:max-w-[800px] gap-10 md:self-start self-center">
+          <div className="flex flex-col gap-1 md:self-start self-center">
+            <div className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] md:text-left text-center ">
               Generate QR Codes & short Link with InShorten
             </div>
-            <div className="text-[14px] sm:text-[16px] text-gray-500 font-normal sm:text-left text-center ">
+            <div className="text-[14px] sm:text-[16px] text-gray-500 font-normal md:text-left text-center ">
               Simple, Fast & Free. Bringing back the good days!
             </div>
           </div>
           <CustomButton
             label={"Generate Now"}
-            className="!w-full max-w-[200px] bg-black sm:self-start self-center"
+            className="!w-full max-w-[200px] bg-black md:self-start self-center"
           />
-          <div className="flex flex-col gap-5 sm:self-start self-center">
+          <div className="flex flex-col gap-5 md:self-start self-center">
             <div className="font-bold text-gray-700">Explore More</div>
-            <div className="w-full max-w-[350px] md:max-w-[600px] grid grid-cols-2 md:grid-cols-3 gap-4 ">
+            <div className="w-full max-w-[350px] md:max-w-[600px] grid grid-cols-2 md:grid-cols-3 gap-4">
               {items.map((item, index) => (
                 <div
                   key={index}
                   onClick={() => handleRedirect(item.route)}
-                  className="flex w-full max-w-[180px] h-[60px] gap-1 border border-gray-600 rounded-md  justify-center items-center cursor-pointer bg-white p-1"
+                  className="flex w-full max-w-[180px] h-[60px] gap-1 border border-gray-600 rounded-md  justify-center items-center cursor-pointer bg-white p-2"
                 >
                   <div className="flex justify-center items-center">
                     {item.icon}
                   </div>
                   <div className="flex flex-col">
-                    <div className="text-[15px] md:text-[17px] text-gray-700 font-semibold text-nowrap">
+                    <div className="text-[15px] md:text-[16px] text-gray-700 font-semibold text-nowrap">
                       {item.title}
                     </div>
                     <div className="w-full max-w-[150px] text-[11px] md:text-[12px] text-gray-500 font-normal text-nowrap">
