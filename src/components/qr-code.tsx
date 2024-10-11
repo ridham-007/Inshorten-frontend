@@ -1,19 +1,19 @@
-'use client';
-import React, { useState } from 'react';
-import { QRCodeSVG } from 'qrcode.react';
-import { RiNumber1, RiNumber2 } from 'react-icons/ri';
-import CustomButton from './ui/custom-buttom';
-import { useRouter } from 'next/navigation';
+"use client";
+import React, { useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
+import { RiNumber1, RiNumber2 } from "react-icons/ri";
+import CustomButton from "./ui/custom-buttom";
+import { useRouter } from "next/navigation";
 
 const QrCode = () => {
   const router = useRouter();
 
   const [inputData, setInputData] = useState({
-    data: '',
+    data: "",
   });
   const [qrCodeGenerated, setQrCodeGenerated] = useState(false);
-  const [color, setColor] = useState('#000000');
-  const [backgroundColor, setBackgroundColor] = useState('#FFFFFF');
+  const [color, setColor] = useState("#000000");
+  const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
   const [size, setSize] = useState(220);
 
   const handleInputChange = (e: any) => {
@@ -32,15 +32,15 @@ const QrCode = () => {
   };
 
   const handleDownloadQRCode = () => {
-    const svg = document.getElementById('qr-code');
+    const svg = document.getElementById("qr-code");
     if (!svg) return;
 
     const svgData = new XMLSerializer().serializeToString(svg);
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
     const img = new Image();
     const svgBlob = new Blob([svgData], {
-      type: 'image/svg+xml;charset=utf-8',
+      type: "image/svg+xml;charset=utf-8",
     });
     const url = URL.createObjectURL(svgBlob);
 
@@ -50,9 +50,9 @@ const QrCode = () => {
       ctx?.drawImage(img, 0, 0);
       URL.revokeObjectURL(url);
 
-      const link = document.createElement('a');
-      link.href = canvas.toDataURL('image/png');
-      link.download = 'qr-code.png';
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = "qr-code.png";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -62,11 +62,11 @@ const QrCode = () => {
   };
 
   const handleTerm = () => {
-    router.push('/terms-conditions');
+    router.push("/terms-conditions");
   };
 
   const handlePrivacy = () => {
-    router.push('/privacy-policy');
+    router.push("/privacy-policy");
   };
 
   return (
@@ -110,12 +110,12 @@ const QrCode = () => {
                 </div>
                 <div className="flex gap-5">
                   <CustomButton
-                    label={'QR Code'}
+                    label={"QR Code"}
                     className="bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px]"
                     onClick={handleGenerateQRCode}
                   />
                   <CustomButton
-                    label={'Download'}
+                    label={"Download"}
                     className="bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px]"
                     onClick={handleDownloadQRCode}
                   />
@@ -171,7 +171,7 @@ const QrCode = () => {
           </div>
         </div>
         <div className="flex justify-center items-center rounded-sm w-[150px] border border-white p-2">
-          Shortner Link
+          Inshorten
         </div>
       </div>
     </div>

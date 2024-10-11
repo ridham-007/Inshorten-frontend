@@ -48,8 +48,8 @@ const Feature = () => {
       <div className="flex flex-col">
         <div className="text-center text-[38px] font-semibold">Features</div>
         <div className="w-full max-w-[1000px] self-center text-center text-[16px] text-gray-600">
-          With Inshorten urls, it is possible to create an intuitive tool for
-          creating personalized QR codes. From a business QR code to an events
+          With Inshorten , it is possible to create an intuitive tool for
+          creating personalized QR codes & shorten urls. From a business QR code to an events
           QR code or even a personal QR code, all of this is easy to achieve,
           transforming any content into a scannable code in just a few seconds.
         </div>

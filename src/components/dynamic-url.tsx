@@ -125,7 +125,7 @@ const DynamicUrl = () => {
             </div>
           </div>
           <div className="flex justify-center items-center rounded-sm w-[150px] border border-white p-2">
-            Shortner Link
+            Inshorten
           </div>
         </div>
       </div>

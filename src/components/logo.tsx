@@ -32,7 +32,7 @@ const Logo = (props: LogoProps) => {
       />
 
       <span className="contents text-[#0B80E0]">In</span>
-      {'shortan urls'}
+      {'shorten'}
     </div>
   );
 };

@@ -161,7 +161,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex justify-center border-t border-gray-300 mt-5 pt-5">
-        <FaRegCopyright size={24} className="mr-2" /> 2024 by BrainAITools. All
+        <FaRegCopyright size={24} className="mr-2" /> 2024 by Inshorten. All
         Right Reserved.
       </div>
     </footer>

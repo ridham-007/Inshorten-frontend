@@ -40,7 +40,7 @@ const Information = () => {
         <div className="flex flex-col w-full lg:max-w-[800px] gap-10">
           <div className="flex flex-col gap-1">
             <div className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] font-serif">
-              Generate QR Codes & short Link with Inshorten Urls
+              Generate QR Codes & short Link with Inshorten
             </div>
             <div className="text-[14px] sm:text-[16px] text-gray-500 font-normal">
               Simple, Fast & Free. Bringing back the good days!

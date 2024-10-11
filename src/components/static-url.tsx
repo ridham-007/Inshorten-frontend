@@ -96,13 +96,12 @@ const StaticUrl = () => {
             <div className="text-[14px] sm:text-[15px] w-full sm:max-w-[700px]">
               ShortURL allows to shorten long links from Instagram, Facebook,
               YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and sites.
-              Enter long URL and click on Shorten URL button. The next page will
-              contain the shortened URL that will be shared over websites, chats
-              and email. Also, it shows the clicks received after shortening.
+              Enter long URL and click on Shorten URL button. The next will
+              contain the shortened URL that will be click and redirect the page.
             </div>
           </div>
           <div className="flex justify-center items-center rounded-sm w-[150px] border border-white p-2">
-            Shortner Link
+            InShorten
           </div>
         </div>
       </div>
