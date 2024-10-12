@@ -2,26 +2,39 @@
 import React, { useState } from "react";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
+import { getShortenUrl } from "@/app/actions";
 
 const StaticUrl = () => {
   const router = useRouter();
 
   const [inputUrl, setInputUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const [originalUrl, setOriginalUrl] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleShortenUrl = () => {
+  const handleShortenUrl = async () => {
     if (inputUrl) {
-      const randomString = Math.random().toString(36).substring(2, 8);
-      const baseUrl = "https://short.url/";
-      const newShortUrl = `${baseUrl}${randomString}`;
-      setShortUrl(newShortUrl);
-      setOriginalUrl(inputUrl);
+      try {
+        const response = await getShortenUrl(inputUrl);
+        if (response?.success === true) {
+          const baseUrl = "https://short.url/";
+          const newShortUrl = `${baseUrl}${response?.data?.code}`;
+          setShortUrl(newShortUrl);
+          setErrorMessage("");
+        } else {
+          setErrorMessage("Failed to shorten URL");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        setErrorMessage("An error occurred while shortening the URL.");
+      }
+    } else {
+      setErrorMessage("Please enter a URL.");
     }
   };
+
   const handleRedirect = () => {
-    if (originalUrl) {
-      window.open(originalUrl, "_blank");
+    if (shortUrl) {
+      window.open(shortUrl, "_blank");
     }
   };
 
@@ -31,12 +44,13 @@ const StaticUrl = () => {
   const handlePrivacy = () => {
     router.push("/privacy-policy");
   };
+
   return (
     <>
       <div className="flex flex-col w-full sm:max-w-[1100px] mx-auto justify-center my-24 border border-gray-500 rounded-md bg-white gap-5 py-8 px-3 sm:px-6">
         <div className="flex flex-col justify-center items-center  ">
           <div className="text-[30px] sm:text-[40px] text-center font-bold ">
-            Static URL Shortner
+            Static URL Shortener
           </div>
           <div className="text-[15px] sm:text-[17px] text-center font-normal text-gray-500">
             Create short & memorable links in seconds.
@@ -60,17 +74,20 @@ const StaticUrl = () => {
             <div className="text-[16px] text-gray-600 mt-4 flex items-center">
               Shortened URL:{" "}
               <a
-                href="#"
-                onClick={handleRedirect}
+                href={shortUrl}
                 className="text-blue-600 underline mx-2"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {shortUrl}
               </a>
             </div>
           )}
+          {errorMessage && (
+            <div className="text-red-600 mt-4">{errorMessage}</div>
+          )}
           <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 mt-12 sm:gap-1 whitespace-nowrap ">
-            By clicking Static url Shorten, you agree to our
+            By clicking Static URL Shorten, you agree to our
             <span
               className="text-blue-500 hover:underline hover:cursor-pointer ml-1 mr-1"
               onClick={handleTerm}
@@ -90,4 +107,5 @@ const StaticUrl = () => {
     </>
   );
 };
+
 export default StaticUrl;
