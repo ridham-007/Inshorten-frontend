@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
+import { getCustomShortenUrl } from "@/app/actions";
 
 const DynamicUrl = () => {
   const router = useRouter();
@@ -10,13 +11,37 @@ const DynamicUrl = () => {
   const [shortUrl, setShortUrl] = useState("");
   const [originalUrl, setOriginalUrl] = useState("");
   const [customWord, setCustomWord] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleShortenUrl = () => {
+  const handleCustomUrl = async () => {
     if (inputUrl) {
-      const baseUrl = "https://";
-      const newShortUrl = `${baseUrl}${customWord || "short.url"}`;
-      setShortUrl(newShortUrl);
-      setOriginalUrl(inputUrl);
+      setLoading(true);
+
+      try {
+        const response = await getCustomShortenUrl({
+          url: inputUrl,
+          code: customWord,
+        });
+
+        if (response?.success === true) {
+          const baseUrl = "https://Inshorten.com/";
+          const newShortUrl = `${baseUrl}${customWord || response.data.code}`;
+          setShortUrl(newShortUrl);
+          setOriginalUrl(inputUrl);
+          setErrorMessage("");
+          setLoading(false);
+        } else {
+          setLoading(false);
+          setErrorMessage("Used different word.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        setErrorMessage("An error occurred while shortening the URL.");
+      }
+    } else {
+      setLoading(false);
+      setErrorMessage("Please enter a URL.");
     }
   };
 
@@ -71,24 +96,30 @@ const DynamicUrl = () => {
             </div>
 
             <CustomButton
-              label={"Shorten URL"}
-              className="bg-black px-2 text-[16px] h-[50px] w-[140px] flex sm:self-end text-nowrap justify-center items-center"
-              onClick={handleShortenUrl}
+              label={loading ? "Loading..." : "Shorten URL"}
+              className={`bg-black px-2 text-[16px] h-[50px] w-[140px] flex sm:self-end text-nowrap justify-center items-center  ${
+                loading ? "opacity-50 bg-black" : ""
+              }`}
+              onClick={handleCustomUrl}
+              isDisabled={loading}
             />
           </div>
+          {errorMessage && (
+            <div className="text-red-600 mt-4">{errorMessage}</div>
+          )}
           {shortUrl && (
             <div className="text-[15px] sm:text-[16px] text-gray-600 mt-4 flex items-center">
               Shortened URL:
               <a
-                href="#"
                 onClick={handleRedirect}
-                className="text-blue-600 underline mx-2"
+                className="text-blue-600 underline mx-2 cursor-pointer"
                 target="_blank"
               >
                 {shortUrl}
               </a>
             </div>
           )}
+
           <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 mt-12 sm:gap-1 whitespace-nowrap">
             By clicking Static QR Code, you agree to our
             <span

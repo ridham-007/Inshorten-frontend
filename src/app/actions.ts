@@ -119,8 +119,6 @@ export async function revalidateRoute(path: string): Promise<void> {
 }
 
 export const getShortenUrl = async (url: string): Promise<any> => {
-  console.log({ url });
-
   if (url) {
     try {
       const response = await fetch(
@@ -144,5 +142,38 @@ export const getShortenUrl = async (url: string): Promise<any> => {
     } catch (error) {
       console.error("Error:", error);
     }
+  }
+};
+
+export const getCustomShortenUrl = async ({ url, code }: any): Promise<any> => {
+  if (!url) {
+    console.error("URL is required");
+    return null;
+  }
+
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SITE_URL}/api/get-custom-url`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          url,
+          code,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error while generating the short URL:", error);
+    return null;
   }
 };

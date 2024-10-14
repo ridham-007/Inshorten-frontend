@@ -6,26 +6,26 @@ interface ButtonProps {
   label: string | undefined;
   className?: string;
   type?: "button" | "submit" | "reset" | undefined;
-  onClick?: () => void | Promise<void> | undefined; 
+  onClick?: () => void | Promise<void> | undefined;
   prefixIcon?: React.ReactNode;
   suffixIcon?: React.ReactNode;
-  isDisabled?: boolean
+  isDisabled?: boolean;
 }
 
 const CustomButton = ({
   label = "",
   type = "button",
-  onClick, 
+  onClick,
   className,
   prefixIcon,
   suffixIcon,
-  isDisabled = false
+  isDisabled = false,
 }: ButtonProps) => {
   const { pending: disabled } = useFormStatus();
 
   const handleButtonClick = async () => {
     if (typeof onClick === "function") {
-      await onClick(); 
+      await onClick();
     }
   };
 
@@ -33,7 +33,9 @@ const CustomButton = ({
     <button
       disabled={disabled || isDisabled}
       type={type}
-      className={`flex cursor-pointer items-center justify-center gap-1 rounded-[8px] bg-[#168733] px-4 py-2 font-semibold text-white ${(disabled || isDisabled) && "!cursor-not-allowed !bg-[#168733AB]"} ${className}`}
+      className={`flex cursor-pointer items-center justify-center gap-1 rounded-[8px] bg-[#168733] px-4 py-2 font-semibold text-white ${
+        (disabled || isDisabled) && "!cursor-not-allowed !bg-[#393939]"
+      } ${className}`}
       onClick={handleButtonClick}
     >
       {!disabled && (
