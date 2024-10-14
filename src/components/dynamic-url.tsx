@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
-import { getCustomShortenUrl } from "@/app/actions";
+import { getCustomShortenUrl, RedirectUrl } from "@/app/actions";
 
 const DynamicUrl = () => {
   const router = useRouter();
@@ -45,9 +45,24 @@ const DynamicUrl = () => {
     }
   };
 
-  const handleRedirect = () => {
-    if (originalUrl) {
-      window.open(originalUrl, "_blank");
+  const handleRedirect = async () => {
+    if (shortUrl) {
+      const code = shortUrl.split("/").pop() as string;
+
+      try {
+        const response = await RedirectUrl(code);
+
+        if (response?.ok === true && response.url) {
+          window.open(response.url, "_blank");
+        } else {
+          setErrorMessage("Failed to retrieve the URL.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        setErrorMessage("An error occurred while redirecting.");
+      }
+    } else {
+      setErrorMessage("Please generate a short URL first.");
     }
   };
 

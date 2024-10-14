@@ -177,3 +177,34 @@ export const getCustomShortenUrl = async ({ url, code }: any): Promise<any> => {
     return null;
   }
 };
+
+export const RedirectUrl = async (code: string): Promise<any> => {
+  if (!code) return null;
+  console.log({ code });
+
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SITE_URL}/api/decode-short-url/${code}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+    }
+
+    if (response.redirected) {
+      return { ok: true, url: response.url }; 
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
+

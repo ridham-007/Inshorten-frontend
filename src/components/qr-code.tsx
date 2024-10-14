@@ -31,7 +31,6 @@ const QrCode = () => {
       setLoading(true);
       try {
         const response = await getShortenUrl(inputData.data);
-        console.log({ response });
 
         if (response?.success === true) {
           setQrCodeGenerated(true);
