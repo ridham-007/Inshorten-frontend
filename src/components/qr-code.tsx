@@ -4,6 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { RiNumber1, RiNumber2 } from "react-icons/ri";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
+import { getShortenUrl } from "@/app/actions";
 
 const QrCode = () => {
   const router = useRouter();
@@ -15,6 +16,8 @@ const QrCode = () => {
   const [color, setColor] = useState("#000000");
   const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
   const [size, setSize] = useState(220);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e: any) => {
     setInputData({
@@ -23,11 +26,29 @@ const QrCode = () => {
     });
   };
 
-  const handleGenerateQRCode = () => {
+  const handleGenerateQRCode = async () => {
     if (inputData.data.trim()) {
-      setQrCodeGenerated(true);
+      setLoading(true);
+      try {
+        const response = await getShortenUrl(inputData.data);
+        console.log({ response });
+
+        if (response?.success === true) {
+          setQrCodeGenerated(true);
+          setErrorMessage("");
+          setLoading(false);
+        } else {
+          setQrCodeGenerated(false);
+          setLoading(false);
+          setErrorMessage("Failed to convert QR Code.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        setErrorMessage("An error occurred while convert QR Code.");
+      }
     } else {
-      setQrCodeGenerated(false);
+      setLoading(false);
+      setErrorMessage("An error occurred while convert QR Code.");
     }
   };
 
@@ -109,9 +130,12 @@ const QrCode = () => {
               </div>
               <div className="flex gap-5">
                 <CustomButton
-                  label={"QR Code"}
-                  className="bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px]"
+                  label={loading ? "Loading..." : "QR Code"}
+                  className={`bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px] ${
+                    loading ? "opacity-50 bg-black" : ""
+                  }`}
                   onClick={handleGenerateQRCode}
+                  isDisabled={loading}
                 />
                 <CustomButton
                   label={"Download"}
@@ -138,6 +162,9 @@ const QrCode = () => {
             </div>
           )}
         </div>
+        {errorMessage && (
+          <div className="text-red-600 mt-4">{errorMessage}</div>
+        )}
       </div>
       <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 mt-12 sm:gap-1 whitespace-nowrap">
         By clicking Static QR Code, you agree to our
