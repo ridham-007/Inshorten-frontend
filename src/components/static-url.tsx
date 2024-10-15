@@ -135,6 +135,4 @@ const StaticUrl = () => {
 };
 
 export default StaticUrl;
-function redirectUrl(originalUrl: string) {
-  throw new Error("Function not implemented.");
-}
+
