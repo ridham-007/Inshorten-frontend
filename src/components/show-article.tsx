@@ -53,7 +53,7 @@ const ShowArticle = ({ slug }: any) => {
   }, []);
 
   return !!article ? (
-    <div className="article-container bg-own_bg_secondary !text-own_text_primary">
+    <div className="article-container bg-own_bg_secondary !text-own_text_primary ">
       <AdCustom
         dataAdId={info.RESPONSIVE_ADS_3.id}
         width={info.RESPONSIVE_ADS_3.width}
@@ -96,9 +96,9 @@ export default ShowArticle;
 
 export function ArticleSkeleton() {
   return (
-    <div className="article-container !px-5 bg-transparent">
+    <div className="article-container !px-5 bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md">
       <div className="flex w-full flex-col gap-2 ">
-        <div className="w-[160px] h-[35px] bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
+        <div className="w-[160px] h-[35px]  animate-pulse rounded-sm"></div>
         {Array(12)
           .fill(null)
           .map((item, index) => {
@@ -107,11 +107,11 @@ export function ArticleSkeleton() {
                 key={`CategoryWiseTopNewsSkeleton1-${index}`}
                 className="flex flex-col basis-[98%] gap-2 w-[100%] overflow-hidden mt-[10px]"
               >
-                <div className="w-[50%] h-[35px] bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
+                <div className="w-[50%] h-[35px] bg-gray-300 animate-pulse rounded-sm"></div>
                 <div className="flex flex-col gap-2 px-[12px] py-[2px]">
-                  <div className="w-full h-5 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
-                  <div className="w-full h-5 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
-                  <div className="w-full h-5 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
+                  <div className="w-full h-5 bg-gray-300 animate-pulse rounded-sm"></div>
+                  <div className="w-full h-5 bg-gray-300 animate-pulse rounded-sm"></div>
+                  <div className="w-full h-5 bg-gray-300 animate-pulse rounded-sm"></div>
                 </div>
               </div>
             );

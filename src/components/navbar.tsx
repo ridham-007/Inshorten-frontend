@@ -7,7 +7,7 @@ import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 export interface NavbarProps {}
 export default function Navbar(props: NavbarProps) {
-  let navData = [{ title: "Blog" }, { title: "Disclaimer" }];
+  let navData = [{ title: "Blog", href: "/blog" }, { title: "Disclaimer" }];
   const hamburgerRef = React.useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);

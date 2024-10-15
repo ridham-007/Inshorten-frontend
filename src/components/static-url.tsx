@@ -47,9 +47,9 @@ const StaticUrl = () => {
         const response = await RedirectUrl(code);
 
         if (response?.ok === true && response.url) {
-          window.open(response.url, "_blank");
+          window.open(response, "_blank");
         } else {
-          setErrorMessage("Failed to retrieve the URL.");
+          window.location.href = "/not-found";
         }
       } catch (error) {
         console.error("Error:", error);

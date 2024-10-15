@@ -34,12 +34,12 @@ export default function CategoryBanner() {
   useEffect(() => {
     getArticleList("recent");
   }, []);
-  
+
   return (
     <>
       {articles.length ? (
         <>
-          <div className="flex w-full flex-wrap justify-between gap-2 h-fit blog-list ">
+          <div className="flex w-full flex-wrap justify-between gap-2 h-fit blog-list bg-white">
             {articles.slice(5).map((item: any, index: any) => {
               return (
                 <Link
@@ -102,7 +102,7 @@ export function CategoryBannerSkeleton() {
           return (
             <div
               key={`CategoryWiseTopNews-${index}`}
-              className="flex flex-col flex-1 lg:basis-[32%] sm:basis-[49%] basis-[100%] lg:max-w-[32%] sm:max-w-[49%] cursor-pointer p-1 rounded-sm border bg-card text-card-foreground shadow"
+              className="flex flex-col flex-1 lg:basis-[32%] sm:basis-[49%] basis-[100%] lg:max-w-[32%] sm:max-w-[49%] cursor-pointer p-1 rounded-sm border bg-card text-card-foreground  bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]" 
             >
               <div className="flex flex-col basis-[90%] flex-1 px-2 py-3 space-y-1.5">
                 <div className="flex basis-[70%] flex-1 flex-col font-semibold leading-none tracking-tight">
@@ -114,13 +114,13 @@ export function CategoryBannerSkeleton() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 basis-[30%] w-[100%] overflow-hidden py-[2px]">
-                  <div className="w-full h-5 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
-                  <div className="w-full h-5 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
-                  <div className="w-full h-5 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
+                  <div className="w-full h-5 bg-gray-300 animate-pulse rounded-sm"></div>
+                  <div className="w-full h-5 bg-gray-300 animate-pulse rounded-sm"></div>
+                  <div className="w-full h-5 bg-gray-300 animate-pulse rounded-sm"></div>
                 </div>
               </div>
               <div className="flex basis-[10%] px-2">
-                <div className="w-full h-5  bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
+                <div className="w-full h-5  bg-gray-300 animate-pulse rounded-sm"></div>
               </div>
             </div>
           );

@@ -49,7 +49,7 @@ export const BlogBanner = () => {
       {articles.length ? (
         <>
           <>
-            <div className="mt-4">
+            <div className="mt-4 ">
               <AdCustom
                 dataAdId={info.RESPONSIVE_ADS_2.id}
                 width={info.RESPONSIVE_ADS_2.width}
@@ -57,7 +57,7 @@ export const BlogBanner = () => {
               />
               <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl mt-[40px]">
                 <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
-                  <div className="flex flex-col sm:flex-row cursor-pointer basis-full flex-0 justify-around gap-[10px] blog-list">
+                  <div className="flex flex-col sm:flex-row cursor-pointer basis-full flex-0 justify-around gap-[10px] blog-list bg-white">
                     {articles?.slice(3, 5).map((item: any, index: any) => (
                       <Link
                         href={`/blog/${item.slug}`}
@@ -90,7 +90,7 @@ export const BlogBanner = () => {
                       </Link>
                     ))}
                   </div>
-                  <div className="flex basis-full md:basis-[33%] flex-shrink-0 flex-col justify-evenly">
+                  <div className="flex basis-full md:basis-[33%] flex-shrink-0 flex-col justify-evenly bg-white">
                     {articles?.slice(0, 3).map((cur: any, index: number) => {
                       function setImgSrc(arg0: string) {
                         throw new Error("Function not implemented.");
@@ -145,7 +145,7 @@ export const BlogBanner = () => {
 
 export function BlogBannerSkeleton() {
   return (
-    <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl border bg-card text-card-foreground shadow mt-[40px]">
+    <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl border bg-card text-card-foreground shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-[40px] bg-white">
       <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
         <div className="flex flex-col sm:flex-row cursor-pointer basis-full flex-0 justify-around gap-[10px]">
           {Array(2)
@@ -154,7 +154,7 @@ export function BlogBannerSkeleton() {
               return (
                 <div
                   key={`CategoryWiseTopNews-${index}`}
-                  className="flex flex-col flex-1 cursor-pointer rounded-sm border bg-card text-card-foreground shadow"
+                  className="flex flex-col flex-1 cursor-pointer rounded-sm border bg-card text-card-foreground bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                 >
                   <div className="flex flex-col basis-[90%] flex-1 space-y-1.5 p-6 px-2 py-3">
                     <div className="flex basis-[70%] flex-1 flex-col font-semibold leading-none tracking-tight">
@@ -167,8 +167,8 @@ export function BlogBannerSkeleton() {
                     </div>
                   </div>
                   <div className="flex flex-col basis-[10%] px-2 py-2 gap-1">
-                    <div className="w-full h-4 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
-                    <div className="w-full h-4 bg-own_skeleton_secondary animate-pulse rounded-sm"></div>
+                    <div className="w-full h-4 bg-gray-300 animate-pulse rounded-sm"></div>
+                    <div className="w-full h-4 bg-gray-300 animate-pulse rounded-sm"></div>
                   </div>
                 </div>
               );
@@ -181,9 +181,9 @@ export function BlogBannerSkeleton() {
               return (
                 <div key={index}>
                   <div className="flex flex-col gap-[5px] w-full">
-                    <div className="md:w-[300px] h-[17px] rounded-sm bg-own_skeleton_secondary animate-pulse"></div>
-                    <div className="md:w-[300px] h-[17px] rounded-sm bg-own_skeleton_secondary animate-pulse"></div>
-                    <div className="md:w-[300px] h-[17px] rounded-sm bg-own_skeleton_secondary animate-pulse"></div>
+                    <div className="md:w-[300px] h-[17px] rounded-sm bg-gray-300 animate-pulse"></div>
+                    <div className="md:w-[300px] h-[17px] rounded-sm bg-gray-300 animate-pulse"></div>
+                    <div className="md:w-[300px] h-[17px] rounded-sm bg-gray-300 animate-pulse"></div>
                   </div>
                   <hr className="my-[10px] text-own_skeleton_border_primary" />
                 </div>

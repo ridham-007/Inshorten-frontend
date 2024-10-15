@@ -199,7 +199,7 @@ export const RedirectUrl = async (code: string): Promise<any> => {
     }
 
     if (response.redirected) {
-      return { ok: true, url: response.url };
+      return { ok: true, url: response.url, redirected: true };
     }
 
     return await response.json();

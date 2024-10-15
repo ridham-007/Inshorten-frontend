@@ -110,8 +110,8 @@ export async function generateMetadata(
 
 const Article = async (props: any) => {
   return (
-    <main className="flex w-full max-w-[1440px] self-center flex-wrap gap-2 px-3 bg-white">
-      <section className="flex flex-col flex-1 basis-[100%] md:basis-[68%] overflow-auto">
+    <main className="flex w-full max-w-[1440px] self-center flex-wrap gap-2 px-3 bg-white mt-10">
+      <section className="flex flex-col flex-1 basis-[100%] md:basis-[68%] overflow-auto ">
         <Suspense fallback={<ArticleSkeleton />}>
           {(async function () {
             return <ShowArticle slug={props?.params?.slug as any} />;

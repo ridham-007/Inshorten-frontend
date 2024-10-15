@@ -109,9 +109,9 @@ export default function DynamicNewsWall(props: NewsWallProps) {
 
 export function DynamicNewsWallSkeleton(props: { label: string }) {
   return (
-    <div className="flex flex-col h-auto p-5 border-l-[1px] mt-5">
+    <div className="flex flex-col h-auto p-5 border-l-[1px] mt-5 bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md">
       <div className="h-[30px] w-full md:h-[33px] items-center">
-        <div className="flex h-6 flex-1 bg-own_skeleton_secondary rounded-full animate-pulse"></div>
+        <div className="flex h-6 flex-1 bg-gray-300 rounded-full animate-pulse"></div>
       </div>
       {Array(5)
         .fill(null)
@@ -124,8 +124,8 @@ export function DynamicNewsWallSkeleton(props: { label: string }) {
                 className="flex flex-row gap-[10px]"
               >
                 <div className="flex flex-col flex-1 basis-[80%] justify-around">
-                  <p className="h-[14px] bg-own_skeleton_secondary rounded-full animate-pulse "></p>
-                  <p className="h-[14px] bg-own_skeleton_secondary rounded-full animate-pulse"></p>
+                  <p className="h-[14px] bg-gray-300 rounded-full animate-pulse "></p>
+                  <p className="h-[14px] bg-gray-300 rounded-full animate-pulse"></p>
                 </div>
                 <div className="flex basis-[20%] overflow-hidden w-full h-full">
                   <ImageWithFallback
@@ -135,7 +135,7 @@ export function DynamicNewsWallSkeleton(props: { label: string }) {
                 </div>
               </div>
               <div className="flex h-7 py-1">
-                <p className="flex flex-1 h-4 max-w-[50%] bg-own_skeleton_secondary rounded-full animate-pulse"></p>
+                <p className="flex flex-1 h-4 max-w-[50%] bg-gray-300 rounded-full animate-pulse"></p>
               </div>
             </div>
           );

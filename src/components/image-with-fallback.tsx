@@ -19,7 +19,7 @@ const ImageWithFallback = (props: ImageWithFallbackProps) => {
       layout="responsive"
       className="flex w-full h-0 min-h-full object-fill rounded-sm"
       onError={() => {
-        setImgSrc("/images/preview.jpg");
+        setImgSrc("/images/preview.png");
       }}
     />
   );

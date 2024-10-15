@@ -55,7 +55,7 @@ const DynamicUrl = () => {
         if (response?.ok === true && response.url) {
           window.open(response.url, "_blank");
         } else {
-          setErrorMessage("Failed to retrieve the URL.");
+          window.location.href = "/not-found";
         }
       } catch (error) {
         console.error("Error:", error);
@@ -76,7 +76,7 @@ const DynamicUrl = () => {
 
   const handleChange = (e: any) => {
     const value = e.target.value;
-    const regex = /^[a-zA-Z0-9_]*$/;
+    const regex = /^[a-zA-Z0-9_-]*$/;
     if (regex.test(value)) {
       setCustomWord(value);
     } else {
