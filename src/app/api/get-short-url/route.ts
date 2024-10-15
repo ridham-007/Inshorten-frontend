@@ -9,7 +9,7 @@ const DATABASE = 'inshorts_url';
 export async function POST(req: Request) {
     try {
         const body = await req.json(); // Parse the JSON body
-        const { url } = body; // Proper destructuring
+        const { url, code } = body; // Proper destructuring
 
         if (!url) {
             return NextResponse.json(
@@ -18,15 +18,28 @@ export async function POST(req: Request) {
             );
         }
 
+        const client = await clientPromise;
+        const collection = client.db(DATABASE).collection(EVENT_COLLECTION);
+
+        if (!!code) {
+            const existingDoc = await collection.findOne({ code: code });
+            if (!!existingDoc) {
+                return NextResponse.json(
+                    { data: null, success: false, message: "Custom code already exists" },
+                    { status: 400 }
+                );
+            }
+
+        }
+
         const uid = new ShortUniqueId({ length: 6 });
         let obj: Record<string, any> = {
             url,
-            code: uid.rnd()
+            code: code ?? uid.rnd()
         };
 
         // connect to DB
-        const client = await clientPromise;
-        let document = await client.db(DATABASE).collection(EVENT_COLLECTION).insertOne(obj);
+        let document = await collection.insertOne(obj);
 
         if (document.acknowledged) {
             return NextResponse.json({ data: obj, success: true }, { status: 201 }); // Return a 201 Created status code
