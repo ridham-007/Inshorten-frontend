@@ -26,24 +26,23 @@ export default async function Disclaimer({
       <h1 className="flex w-full flex-col text-white text-xl lg:text-3xl font-semibold items-center px-8 py-4 md:py-6 lg:py-12 bg-gradient-to-br from-[#0B80E0] to-[#77b6e9] my-5">
         Disclaimer
       </h1>
+
       <p className="mt-10 font-bold text-gray-700">
-        {" "}
-        Last updated: May 13, 2024
+        Last updated: October 12, 2024
       </p>
-      <p>Last updated: October 12, 2024</p>
-      <h2>Interpretation and Definitions</h2>
-      <h3>Interpretation</h3>
+      <h2 className="text-[22px] font-semibold mt-3 text-[#0B80E1]">
+        Interpretation and Definitions
+      </h2>
+      <h3 className="text-[18px] font-bold mt-2 ">Interpretation</h3>
       <p>
         The words of which the initial letter is capitalized have meanings
         defined under the following conditions. The following definitions shall
         have the same meaning regardless of whether they appear in singular or
         in plural.
       </p>
-      <h3 className="text-[22px] font-semibold mt-3 text-[#0B80E1]">
-        Definitions
-      </h3>
+      <h3 className="text-[18px] font-bold mt-2 ">Definitions</h3>
       <p className="mt-1">For the purposes of this Disclaimer:</p>
-      <ul>
+      <ul className="mt-5">
         <li>
           <strong>Company</strong> (referred to as either &quot;the
           Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
@@ -202,7 +201,7 @@ export default async function Disclaimer({
         If you have any questions about this Disclaimer, You can contact Us:
       </p>
       <ul>
-        <li>By email: contact@inshorten.com</li>
+        <li className="text-[#0B80E1]">By email:contact@inshorten.com</li>
       </ul>
     </main>
   );

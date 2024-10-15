@@ -11,12 +11,12 @@ const featureData = [
     icon: <GoThumbsup />,
     title: "Easy",
     description:
-      "ShortURL is easy and fast, enter the long link to get your shortened link",
+      "InShorten is easy and fast, enter the long link to get your shorten link",
   },
   {
     icon: <ImLink />,
     title: "Shortened",
-    description: "Use any link, no matter what size, ShortURL always shortens",
+    description: "Use any link, no matter what size, InShorten always shortens",
   },
   {
     icon: <MdOutlineSecurity />,

@@ -95,10 +95,9 @@ const QrCode = () => {
         <div className="text-[32px] sm:text-[40px] text-center font-bold ">
           Static QR Code
         </div>
-        <div className="flex text-[14px] sm:text-[15px] text-center font-normal text-gray-500">
+        <div className="flex text-[14px] w-full max-w-[750px] self-center sm:text-[15px] text-center font-normal text-gray-500">
           Creating QR codes should be quick, easy, and straightforward. Our tool
-          allows you to generate custom QR codes for your business or personal
-          needs.
+          allows you to generate QR code for your business or personal needs.
         </div>
       </div>
       <div className="flex w-full flex-col md:flex-row justify-center items-center gap-12">
@@ -166,7 +165,7 @@ const QrCode = () => {
         )}
       </div>
       <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 mt-12 sm:gap-1 whitespace-nowrap">
-        By clicking Static QR Code, you agree to our
+        By clicking QR Code, you agree to our
         <span
           className="text-blue-500 hover:underline hover:cursor-pointer ml-1 mr-1"
           onClick={handleTerm}

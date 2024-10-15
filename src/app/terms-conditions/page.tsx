@@ -79,17 +79,18 @@ export default async function TermsAndCondition({
         Please read these terms and conditions carefully before using Our
         Service.
       </p>
-      <h2>Interpretation and Definitions</h2>
-      <h3>Interpretation</h3>
+      <h2 className="text-[22px] font-semibold mt-3 text-[#0B80E1]">Interpretation and Definitions</h2>
+      <h3 className="text-[18px] font-bold mt-2 ">Interpretation</h3>
       <p>
         The words of which the initial letter is capitalized have meanings
         defined under the following conditions. The following definitions shall
         have the same meaning regardless of whether they appear in singular or
         in plural.
       </p>
-      <h3 className="text-[22px] font-semibold mt-3 text-[#0B80E1]">Definitions</h3>
+      <h3 className="text-[18px] font-bold mt-2 ">Definitions</h3>
+
       <p>For the purposes of these Terms and Conditions:</p>
-      <ul className="flex flex-col gap-2 mt-2">
+      <ul className="flex flex-col gap-2 mt-6 ">
         {definitions.map((definition, index) => (
           <li key={index}>
             <p>

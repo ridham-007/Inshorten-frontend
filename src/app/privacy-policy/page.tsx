@@ -148,19 +148,22 @@ export default async function PrivacyPolicy({
         </a>
         .
       </p>
-      <h2>Interpretation and Definitions</h2>
-      <h3>Interpretation</h3>
+      <h2 className="text-[22px] font-semibold mt-3 text-[#0B80E1]">
+        Interpretation and Definitions
+      </h2>
+
+      <h3 className="text-[18px] font-bold mt-2 ">Interpretation</h3>
+
       <p>
         The words of which the initial letter is capitalized have meanings
         defined under the following conditions. The following definitions shall
         have the same meaning regardless of whether they appear in singular or
         in plural.
       </p>
-      <h3 className="text-[#0B80E1] text-[22px] font-semibold mt-5">
-        Definitions
-      </h3>
-      <p className="mt-3">For the purposes of this Privacy Policy:</p>
-      <ul className="flex flex-col gap-2">
+      <h3 className="text-[18px] font-bold mt-2 ">Definitions</h3>
+
+      <p >For the purposes of this Privacy Policy:</p>
+      <ul className="flex flex-col gap-2 mt-6">
         {terms.map((term, index) => (
           <li key={index}>
             <p>
@@ -222,14 +225,14 @@ export default async function PrivacyPolicy({
       </p>
       <ul>
         <li className="mt-4 ">
-          <strong className="text-[18px] ">Cookies or Browser Cookies.</strong> A
-          cookie is a small file placed on Your Device. You can instruct Your
+          <strong className="text-[18px] ">Cookies or Browser Cookies.</strong>{" "}
+          A cookie is a small file placed on Your Device. You can instruct Your
           browser to refuse all Cookies or to indicate when a Cookie is being
           sent. However, if You do not accept Cookies, You may not be able to
           use some parts of our Service. Unless you have adjusted Your browser
           setting so that it will refuse Cookies, our Service may use Cookies.
         </li>
-        <li  className="mt-4 ">
+        <li className="mt-4 ">
           <strong>Web Beacons.</strong> Certain sections of our Service and our
           emails may contain small electronic files known as web beacons (also
           referred to as clear gifs, pixel tags, and single-pixel gifs) that

@@ -9,7 +9,7 @@ const StaticUrlLayout = () => {
         <StaticUrl />
         <Content
           title="A fast and simple URL shortener"
-          description="ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and sites."
+          description="InShorten allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and sites."
         />
       </div>
     </>

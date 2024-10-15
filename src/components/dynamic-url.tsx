@@ -80,17 +80,17 @@ const DynamicUrl = () => {
     if (regex.test(value)) {
       setCustomWord(value);
     } else {
-      setErrorMessage("only text, number and underscore(_) used");
+      setErrorMessage("only text, number and (-,_) used");
     }
   };
   return (
     <>
       <div className="flex flex-col w-full my-24 sm:max-w-[1100px] mx-auto justify-center border border-gray-500 rounded-md bg-white px-3 sm:px-6 py-8">
         <div className="flex flex-col justify-center items-center">
-          <div className="text-[30px] sm:text-[40px] text-center font-bold">
+          <div className="text-[30px] sm:text-[40px] text-center font-bold ">
             Dynamic URL Shortener
           </div>
-          <div className="text-[14px] sm:text-[18px] text-center font-normal text-gray-500">
+          <div className="text-[15px] sm:text-[16px] text-center font-normal text-gray-500">
             Create short & memorable links in seconds.
           </div>
 
@@ -132,7 +132,7 @@ const DynamicUrl = () => {
             <div className="text-red-600 mt-4">{errorMessage}</div>
           )}
           {shortUrl && (
-            <div className="text-[15px] sm:text-[16px] text-gray-600 mt-4 flex items-center">
+            <div className="flex flex-col sm:flex-row text-[16px] text-gray-600 mt-4 items-center">
               Shortened URL:
               <a
                 onClick={handleRedirect}
@@ -145,7 +145,7 @@ const DynamicUrl = () => {
           )}
 
           <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 mt-12 sm:gap-1 whitespace-nowrap">
-            By clicking Static QR Code, you agree to our
+            By clicking Dynamic QR code, you agree to our
             <span
               className="text-blue-500 hover:underline hover:cursor-pointer ml-1 mr-1"
               onClick={handleTerm}

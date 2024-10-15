@@ -47,7 +47,7 @@ const StaticUrl = () => {
         const response = await RedirectUrl(code);
 
         if (response?.ok === true && response.url) {
-          window.open(response, "_blank");
+          window.open(response.url, "_blank");
         } else {
           window.location.href = "/not-found";
         }
@@ -74,7 +74,7 @@ const StaticUrl = () => {
           <div className="text-[30px] sm:text-[40px] text-center font-bold">
             Static URL Shortener
           </div>
-          <div className="text-[15px] sm:text-[17px] text-center font-normal text-gray-500">
+          <div className="text-[15px] sm:text-[16px] text-center font-normal text-gray-500">
             Create short & memorable links in seconds.
           </div>
 
@@ -88,8 +88,8 @@ const StaticUrl = () => {
             />
             <CustomButton
               label={loading ? "Loading..." : "Shorten URL"}
-              className={`bg-black px-2 text-[14px] sm:text-[16px] w-[140px] ${
-                loading ? "opacity-50 bg-black" : ""
+              className={`bg-black px-2 text-[16px] h-[45px] w-[140px]${
+                loading ? "opacity-50 bg-black w-[140px]" : ""
               }`}
               onClick={handleShortUrl}
               isDisabled={loading}
@@ -97,7 +97,7 @@ const StaticUrl = () => {
           </div>
 
           {shortUrl && (
-            <div className="text-[16px] text-gray-600 mt-4 flex items-center ">
+            <div className="flex flex-col sm:flex-row text-[16px] text-gray-600 mt-5 items-center ">
               Shortened URL:{" "}
               <a
                 className="text-blue-600 underline mx-2 cursor-pointer"
@@ -135,4 +135,3 @@ const StaticUrl = () => {
 };
 
 export default StaticUrl;
-
