@@ -136,11 +136,10 @@ export const getShortenUrl = async (url: string): Promise<any> => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data = await response.json();
-
-      return data;
+      return await response.json();
     } catch (error) {
       console.error("Error:", error);
+      return null;
     }
   }
 };

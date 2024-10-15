@@ -55,7 +55,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
   }, []);
 
   return articles.length ? (
-    <div className="flex flex-col h-auto p-5 md:border-l-[1px] news mt-5 text-own_text_primary bg-own_bg_secondary">
+    <div className="flex flex-col h-auto p-5 md:border-l-[1px] news mt-5 ">
       <div className="flex items-center text-[20px] font-semibold md:text-[20px] text-foreground pb-2 cursor-pointer blog-list">
         {props.title}
         <GoChevronRight size={24} className="ml-3" />
@@ -75,7 +75,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
               }
             }}
           >
-            <hr className="py-2 text-own_skeleton_border_primary"></hr>
+            <hr className="py-2 "></hr>
             <label
               key={`${cur.title}-${index}`}
               className="flex flex-row items-start cursor-pointer gap-[10px]"
@@ -94,7 +94,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
                 ></ImageWithFallback>
               </div>
             </label>
-            <label className="flex text-sm font-normal news gap-2 whitespace-nowrap py-1 text-own_blog_text_primary">
+            <label className="flex text-sm font-normal news gap-2 whitespace-nowrap py-1 ">
               {formatDate(cur?.updatedAt)}
               Read
             </label>

@@ -53,16 +53,16 @@ const ShowArticle = ({ slug }: any) => {
   }, []);
 
   return !!article ? (
-    <div className="article-container bg-own_bg_secondary !text-own_text_primary ">
+    <div className="article-container ">
       <AdCustom
         dataAdId={info.RESPONSIVE_ADS_3.id}
         width={info.RESPONSIVE_ADS_3.width}
         height={info.RESPONSIVE_ADS_3.height}
       />
-      <div className="flex flex-col pb-2 mb-2 border-b border-own_skeleton_border_primary">
+      <div className="flex flex-col pb-2 mb-2 border-b ">
         <h2 className="font-semibold py-1">{article?.title}</h2>
         <div className="flex w-[100%] justify-start gap-[10px] pb-0 items-center">
-          <div className="flex text-sm font-normal news gap-2 whitespace-nowrap py-1 text-own_blog_text_primary ">
+          <div className="flex text-sm font-normal news gap-2 whitespace-nowrap py-1 ">
             {formatDate(article?.updatedAt)}
           </div>
         </div>

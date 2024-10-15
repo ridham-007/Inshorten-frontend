@@ -416,7 +416,7 @@ export default async function PrivacyPolicy({
         Please note, however, that We may need to retain certain information
         when we have a legal obligation or lawful basis to do so.
       </p>
-      <h3 className="text-[20px] font-semibold mt-5 text-[#0B80E1] text-[#0B80E1]">
+      <h3 className="text-[20px] font-semibold mt-5 text-[#0B80E1] ">
         Disclosure of Your Personal Data
       </h3>
       <h4>Business Transactions</h4>
@@ -426,7 +426,7 @@ export default async function PrivacyPolicy({
         Personal Data is transferred and becomes subject to a different Privacy
         Policy.
       </p>
-      <h4 className="text-[20px] font-semibold mt-5 text-[#0B80E1] text-[#0B80E1]">
+      <h4 className="text-[20px] font-semibold mt-5 text-[#0B80E1]">
         Law enforcement
       </h4>
       <p>
@@ -434,7 +434,7 @@ export default async function PrivacyPolicy({
         Your Personal Data if required to do so by law or in response to valid
         requests by public authorities (e.g. a court or a government agency).
       </p>
-      <h4 className="text-[20px] font-semibold mt-5 text-[#0B80E1] text-[#0B80E1]">
+      <h4 className="text-[20px] font-semibold mt-5 text-[#0B80E1]">
         Other legal requirements
       </h4>
       <p>

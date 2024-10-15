@@ -145,7 +145,7 @@ export const BlogBanner = () => {
 
 export function BlogBannerSkeleton() {
   return (
-    <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl border bg-card text-card-foreground shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-[40px] bg-white">
+    <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl border shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mt-[40px] bg-white">
       <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
         <div className="flex flex-col sm:flex-row cursor-pointer basis-full flex-0 justify-around gap-[10px]">
           {Array(2)
@@ -154,7 +154,7 @@ export function BlogBannerSkeleton() {
               return (
                 <div
                   key={`CategoryWiseTopNews-${index}`}
-                  className="flex flex-col flex-1 cursor-pointer rounded-sm border bg-card text-card-foreground bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+                  className="flex flex-col flex-1 cursor-pointer rounded-sm border bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                 >
                   <div className="flex flex-col basis-[90%] flex-1 space-y-1.5 p-6 px-2 py-3">
                     <div className="flex basis-[70%] flex-1 flex-col font-semibold leading-none tracking-tight">
@@ -185,7 +185,7 @@ export function BlogBannerSkeleton() {
                     <div className="md:w-[300px] h-[17px] rounded-sm bg-gray-300 animate-pulse"></div>
                     <div className="md:w-[300px] h-[17px] rounded-sm bg-gray-300 animate-pulse"></div>
                   </div>
-                  <hr className="my-[10px] text-own_skeleton_border_primary" />
+                  <hr className="my-[10px] " />
                 </div>
               );
             })}
