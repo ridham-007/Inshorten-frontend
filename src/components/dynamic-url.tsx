@@ -74,6 +74,15 @@ const DynamicUrl = () => {
     router.push("/privacy-policy");
   };
 
+  const handleChange = (e: any) => {
+    const value = e.target.value;
+    const regex = /^[a-zA-Z0-9_]*$/;
+    if (regex.test(value)) {
+      setCustomWord(value);
+    } else {
+      setErrorMessage("only text, number and underscore(_) used");
+    }
+  };
   return (
     <>
       <div className="flex flex-col w-full my-24 sm:max-w-[1100px] mx-auto justify-center border border-gray-500 rounded-md bg-white px-3 sm:px-6 py-8">
@@ -104,8 +113,8 @@ const DynamicUrl = () => {
               <input
                 type="text"
                 value={customWord}
-                onChange={(e) => setCustomWord(e.target.value)}
-                placeholder="Enter custom word... "
+                onChange={handleChange}
+                placeholder="Enter custom word..."
                 className="text-[15px] px-2 border-[1px] border-[#000] h-[50px] md:w-[200px] bg-white rounded-md outline-black"
               />
             </div>

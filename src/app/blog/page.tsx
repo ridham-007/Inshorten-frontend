@@ -1,13 +1,24 @@
-import React from "react";
-import Blog from "@/components/blog";
+import { BlogBanner, BlogBannerSkeleton } from "@/components/blog-banner";
+import CategoryBanner, {
+  CategoryBannerSkeleton,
+} from "@/components/category-banner";
+import React, { Suspense } from "react";
 
-const BlogLayout = () => {
+const Blog = async () => {
   return (
-    <>
-      <div className="flex flex-col w-full max-w-[1440px] self-center py-20">
-        <Blog />
-      </div>
-    </>
+    <main className="flex w-full max-w-[1440px] self-center flex-1 flex-col flex-wrap h-auto gap-2 px-5 md:px-10">
+      <Suspense fallback={<BlogBannerSkeleton />}>
+        {(async function () {
+          return <BlogBanner />;
+        })()}
+      </Suspense>
+      <Suspense fallback={<CategoryBannerSkeleton />}>
+        {(async function () {
+          return <CategoryBanner />;
+        })()}
+      </Suspense>
+    </main>
   );
 };
-export default BlogLayout;
+
+export default Blog;

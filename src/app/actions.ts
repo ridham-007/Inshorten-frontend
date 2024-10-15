@@ -153,7 +153,7 @@ export const getCustomShortenUrl = async ({ url, code }: any): Promise<any> => {
 
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SITE_URL}/api/get-custom-url`,
+      `${process.env.NEXT_PUBLIC_SITE_URL}/api/get-short-url`,
       {
         method: "POST",
         headers: {
@@ -170,8 +170,7 @@ export const getCustomShortenUrl = async ({ url, code }: any): Promise<any> => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error("Error while generating the short URL:", error);
     return null;
@@ -180,7 +179,6 @@ export const getCustomShortenUrl = async ({ url, code }: any): Promise<any> => {
 
 export const RedirectUrl = async (code: string): Promise<any> => {
   if (!code) return null;
-  console.log({ code });
 
   try {
     const response = await fetch(
@@ -195,11 +193,13 @@ export const RedirectUrl = async (code: string): Promise<any> => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      throw new Error(
+        errorData.message || `HTTP error! status: ${response.status}`
+      );
     }
 
     if (response.redirected) {
-      return { ok: true, url: response.url }; 
+      return { ok: true, url: response.url };
     }
 
     return await response.json();
@@ -207,4 +207,3 @@ export const RedirectUrl = async (code: string): Promise<any> => {
     console.error("Error:", error);
   }
 };
-
