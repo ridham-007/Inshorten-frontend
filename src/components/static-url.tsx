@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
-import { getShortenUrl, RedirectUrl } from "@/app/actions";
+import { getShortenUrl } from "@/app/actions";
 import Link from "next/link";
+import Spinner from "./loader";
 
 const StaticUrl = () => {
   const router = useRouter();
@@ -62,10 +63,8 @@ const StaticUrl = () => {
           className="px-2 border-[1px] border-[#000] h-[50px] w-full sm:w-[400px] bg-white rounded-md outline-black"
         />
         <CustomButton
-          label={loading ? "Loading..." : "Shorten URL"}
-          className={`bg-black px-2 text-[16px] h-[45px] w-[140px]${
-            loading ? "opacity-50 bg-black w-[140px]" : ""
-          }`}
+          label={loading ? <Spinner /> : "Shorten URL"}
+          className={`bg-black px-2 text-[16px] h-[45px] w-[140px]`}
           onClick={handleShortUrl}
           isDisabled={loading}
         />
@@ -84,9 +83,7 @@ const StaticUrl = () => {
           </Link>
         </div>
       )}
-      {errorMessage && (
-        <div className="text-red-600 my-4">{errorMessage}</div>
-      )}
+      {errorMessage && <div className="text-red-600 my-4">{errorMessage}</div>}
       <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 sm:gap-1 whitespace-nowrap">
         By clicking Static URL Shorten, you agree to our
         <span

@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
-import { getCustomShortenUrl, RedirectUrl } from "@/app/actions";
+import { getCustomShortenUrl } from "@/app/actions";
 import Link from "next/link";
+import Spinner from "./loader";
 
 const DynamicUrl = () => {
   const router = useRouter();
@@ -31,9 +32,10 @@ const DynamicUrl = () => {
           setLoading(false);
         } else {
           setLoading(false);
-          setErrorMessage(response?.message);
+          setErrorMessage(response?.message || "Use a different word.");
         }
       } catch (error) {
+        setLoading(false);
         console.error("Error:", error);
         setErrorMessage("An error occurred while shortening the URL.");
       }
@@ -56,10 +58,12 @@ const DynamicUrl = () => {
     const regex = /^[a-zA-Z0-9_-]*$/;
     if (regex.test(value)) {
       setCustomWord(value);
+      setErrorMessage("");
     } else {
-      setErrorMessage("only alphanumeric and (-,_) is valid");
+      setErrorMessage("Only alphanumeric characters and (-,_) are allowed.");
     }
   };
+
   return (
     <div className="flex flex-col w-full sm:max-w-[1100px] mx-auto justify-center border border-gray-500 rounded-md bg-white py-8 px-5 sm:px-10">
       <div className="text-[28px] sm:text-[32px] text-center font-bold">
@@ -95,10 +99,8 @@ const DynamicUrl = () => {
         </div>
 
         <CustomButton
-          label={loading ? "Loading..." : "Shorten URL"}
-          className={`bg-black px-2 text-[16px] h-[50px] w-[140px] md:max-w-[15%] flex sm:self-end text-nowrap justify-center items-center  ${
-            loading ? "opacity-50 bg-black" : ""
-          }`}
+          label={loading ? <Spinner /> : "Shorten URL"}
+          className={`bg-black px-2 text-[16px] h-[50px] w-[140px] md:max-w-[15%] flex sm:self-end text-nowrap justify-center items-center`}
           onClick={handleCustomUrl}
           isDisabled={loading}
         />
@@ -117,7 +119,7 @@ const DynamicUrl = () => {
           </Link>
         </div>
       )}
-      {errorMessage && <div className="text-red-600 my-4">{errorMessage}</div>}
+      {errorMessage && <div className="text-red-600 ">{errorMessage}</div>}
 
       <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 sm:gap-1 whitespace-nowrap">
         By clicking Static URL Shorten, you agree to our

@@ -3,7 +3,7 @@ import React from "react";
 import { useFormStatus } from "react-dom";
 
 interface ButtonProps {
-  label: string | undefined;
+  label: React.ReactNode;
   className?: string;
   type?: "button" | "submit" | "reset" | undefined;
   onClick?: () => void | Promise<void> | undefined;
@@ -34,7 +34,7 @@ const CustomButton = ({
       disabled={disabled || isDisabled}
       type={type}
       className={`flex cursor-pointer items-center justify-center gap-1 rounded-[8px] bg-[#168733] px-4 py-2 font-semibold text-white ${
-        (disabled || isDisabled) && "!cursor-not-allowed !bg-[#393939]"
+        (disabled || isDisabled) && "!cursor-not-allowed "
       } ${className}`}
       onClick={handleButtonClick}
     >

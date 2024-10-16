@@ -5,6 +5,7 @@ import { RiNumber1, RiNumber2 } from "react-icons/ri";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
 import { getShortenUrl } from "@/app/actions";
+import Spinner from "./loader";
 
 const QrCode = () => {
   const router = useRouter();
@@ -13,9 +14,6 @@ const QrCode = () => {
     data: "",
   });
   const [shortUrl, setShortUrl] = useState("");
-  const [qrCodeGenerated, setQrCodeGenerated] = useState(false);
-  const [color, setColor] = useState("#000000");
-  const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
   const [size, setSize] = useState(220);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -48,7 +46,7 @@ const QrCode = () => {
       }
     } else {
       setLoading(false);
-      setErrorMessage("An error occurred while convert QR Code.");
+      setErrorMessage("Enter the Data");
     }
   };
 
@@ -93,13 +91,13 @@ const QrCode = () => {
   return (
     <div className="flex flex-col w-full sm:max-w-[1100px] mx-auto items-center justify-center border border-gray-500 rounded-md bg-white py-8 px-5 sm:px-10">
       <div className="text-[28px] sm:text-[32px] text-center font-bold">
-        Static QR Code
+        QR Code generator
       </div>
       <div className="flex text-[15px] sm:text-[16px] max-w-[768px] text-center font-normal text-gray-500">
         Creating QR codes should be quick, easy, and straightforward. Our tool
         allows you to generate QR code for your business or personal needs.
       </div>
-      <div className="flex w-full">
+      <div className="flex flex-col md:flex-row w-full">
         <div className="flex w-full my-5 justify-center">
           <div className="flex flex-col px-5 py-5 w-full max-w-[400px] gap-12 items-center">
             <div className="flex flex-col w-full gap-5">
@@ -125,10 +123,8 @@ const QrCode = () => {
               </div>
               <div className="flex gap-5">
                 <CustomButton
-                  label={loading ? "Loading..." : "QR Code"}
-                  className={`bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px] ${
-                    loading ? "opacity-50 bg-black" : ""
-                  }`}
+                  label={loading ? <Spinner /> : "QR Code"}
+                  className={`bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px]`}
                   onClick={handleGenerateQRCode}
                   isDisabled={loading}
                 />
@@ -149,16 +145,15 @@ const QrCode = () => {
                 id="qr-code"
                 value={shortUrl}
                 size={size}
-                bgColor={backgroundColor}
-                fgColor={color}
                 level="Q"
                 includeMargin={true}
+                className="bg-white text-black"
               />
             </div>
           </div>
         )}
       </div>
-      {errorMessage && <div className="text-red-600 mt-4">{errorMessage}</div>}
+      {errorMessage && <div className="text-red-600">{errorMessage}</div>}
       <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 sm:gap-1 whitespace-nowrap">
         By clicking Static URL Shorten, you agree to our
         <span
