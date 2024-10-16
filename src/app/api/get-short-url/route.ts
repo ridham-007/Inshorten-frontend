@@ -4,8 +4,8 @@ import { NextResponse } from 'next/server';
 // import type { NextApiRequest, NextApiResponse } from 'next'
 let ShortUniqueId = require("short-unique-id");
 
-const EVENT_COLLECTION = 'mapping';
-const DATABASE = 'inshorts_url';
+const DATABASE = process.env.NEXT_PUBLIC_MONGODB_DATABASE || '';
+const EVENT_COLLECTION = process.env.NEXT_PUBLIC_MONGODB_COLLECTION || '';
 export async function POST(req: Request) {
     try {
         const body = await req.json(); // Parse the JSON body
