@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
 import { getShortenUrl, RedirectUrl } from "@/app/actions";
+import Link from "next/link";
 
 const StaticUrl = () => {
   const router = useRouter();
@@ -33,27 +34,6 @@ const StaticUrl = () => {
     } else {
       setLoading(false);
       setErrorMessage("Please enter a URL.");
-    }
-  };
-
-  const handleRedirect = async () => {
-    if (shortUrl) {
-      const code = shortUrl.split("/").pop() as string;
-
-      try {
-        const response = await RedirectUrl(code);
-
-        if (response?.ok === true && response.url) {
-          window.open(response.url, "_blank");
-        } else {
-          window.location.href = "/not-found";
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        setErrorMessage("An error occurred while redirecting.");
-      }
-    } else {
-      setErrorMessage("Please generate a short URL first.");
     }
   };
 
@@ -94,14 +74,14 @@ const StaticUrl = () => {
       {shortUrl && (
         <div className="flex flex-col sm:flex-row text-[16px] my-4 text-gray-600 items-center ">
           Shortened URL:{" "}
-          <a
+          <Link
             className="text-blue-600 underline mx-2 cursor-pointer"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleRedirect}
+            href={shortUrl}
           >
             {shortUrl}
-          </a>
+          </Link>
         </div>
       )}
       {errorMessage && (

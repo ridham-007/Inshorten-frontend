@@ -25,8 +25,7 @@ export async function GET(req: Request, data: any) {
       .findOne({ code: code });
 
     if (document) {
-      // return NextResponse.json({ data: document, success: true }, { status: 201 }); // Return a 201 Created status code
-      return NextResponse.redirect(document.url);
+        return NextResponse.redirect(document.url);
     } else {
       return NextResponse.json(
         { data: null, success: false, message: "Failed to insert document" },
