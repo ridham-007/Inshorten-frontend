@@ -33,10 +33,13 @@ const Information = () => {
   const handleRedirect = (route: any) => {
     router.push(route);
   };
+  const handleStaticUrl = () => {
+    router.push("/static-url");
+  };
 
   return (
     <div className="flex flex-col lg:flex-row w-full justify-around gap-7">
-      <div className="flex flex-col basis-[50%] max-h-fit gap-10 px-10">
+      <div className="flex flex-col basis-[50%] max-h-fit gap-10 px-1 sm:px-10">
         <div className="flex flex-col gap-1 lg:justify-start justify-center">
           <div className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] md:text-left text-center ">
             Generate QR Codes & short Link with InShorten
@@ -48,9 +51,12 @@ const Information = () => {
         <CustomButton
           label={"Generate Now"}
           className="!w-full max-w-[200px] bg-black md:self-start self-center"
+          onClick={handleStaticUrl}
         />
         <div className="flex w-full flex-col gap-5">
-          <div className="flex font-bold text-gray-700 justify-center lg:justify-start">Explore More</div>
+          <div className="flex font-bold text-gray-700 justify-center lg:justify-start">
+            Explore More
+          </div>
           <div className="flex w-full flex-row flex-wrap gap-4 justify-center lg:justify-start">
             {items.map((item, index) => (
               <div
