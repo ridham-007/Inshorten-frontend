@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 
 if (!process.env.NEXT_PUBLIC_MONGODB_URL) {
-  throw new Error("Please add your Mongo URI to .env");
+  throw new Error("Please add your Mongo URI to .env s");
 }
 
 const uri: string = process.env.NEXT_PUBLIC_MONGODB_URL ?? "";
