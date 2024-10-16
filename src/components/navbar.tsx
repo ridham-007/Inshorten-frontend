@@ -2,26 +2,44 @@
 
 import Logo from "@/components/logo";
 import Link from "next/link";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 export interface NavbarProps {}
 
 export default function Navbar(props: NavbarProps) {
   const navData = [
+    { title: "Static URL", href: "/static-url" },
+    { title: "Dynamic URL", href: "/dynamic-url" },
+    { title: "QR Code", href: "/qr-code" },
     { title: "Blog", href: "/blog" },
-    { title: "Disclaimer", href: "/disclaimer" },
   ];
   const [open, setOpen] = useState(false);
   const hamburgerRef = useRef<HTMLDivElement>(null);
-
   const handleOpen = () => setOpen(!open);
 
+  useEffect(() => {
+    // Function to handle clicks outside the wrapper
+    const handleClickOutside = (event: any) => {
+      if (
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <nav className="flex flex-col w-full h-[80px] justify-center relative z-[1000] bg-white shadow-lg md:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md">
       <div className="flex w-full justify-between items-center px-5">
         <Logo />
-        <div className="flex items-center blog-list">
+        <div className="flex items-center blog-list font-medium">
           {/* Desktop Navigation */}
           {navData.map((tab, index) => (
             <Link
