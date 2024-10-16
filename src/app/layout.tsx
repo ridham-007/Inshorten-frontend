@@ -25,9 +25,11 @@ export default function RootLayout({
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="flex flex-col w-full px-3 sm:px-10 self-center items-center">
+        <div className="flex flex-col w-full px-3 sm:px-10">
           <Header />
-          {children}
+          <div className="flex flex-col w-full flex-1">
+            {children}
+          </div>
           <Footer />
         </div>
       </body>

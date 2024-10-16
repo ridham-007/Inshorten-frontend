@@ -65,7 +65,7 @@ const StaticUrl = () => {
   };
 
   return (
-    <div className="flex flex-col w-full sm:max-w-[1100px] mx-auto justify-center items-center border border-gray-500 rounded-md bg-white py-8 px-5 sm:px-10">
+    <div className="flex flex-col w-full sm:max-w-[1100px] mx-auto justify-center border border-gray-500 rounded-md bg-white py-8 px-5 sm:px-10">
       <div className="text-[28px] sm:text-[32px] text-center font-bold">
         Static URL Shortener
       </div>
@@ -73,7 +73,7 @@ const StaticUrl = () => {
         Create short & memorable links in seconds.
       </div>
 
-      <div className="flex flex-col sm:flex-row w-full my-10 gap-3 justify-center items-center">
+      <div className="flex flex-col md:flex-row w-full my-10 gap-3 justify-center items-center">
         <input
           type="text"
           value={inputUrl}

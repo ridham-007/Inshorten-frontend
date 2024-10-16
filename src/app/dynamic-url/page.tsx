@@ -5,7 +5,7 @@ import React from "react";
 const DynamicUrlLayout = () => {
   return (
     <>
-      <div className="flex flex-col  w-full">
+      <div className="flex flex-col w-full gap-12 my-14">
         <DynamicUrl />
         <Content
           title="A fast and simple Dynamic URL shortener"
