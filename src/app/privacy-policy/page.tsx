@@ -122,7 +122,7 @@ export default async function PrivacyPolicy({
   ];
 
   return (
-    <main className="flex w-full flex-col flex-wrap h-auto bg-white px-5 md:px-10 mt-10 ">
+    <main className="flex w-full flex-col flex-wrap h-auto bg-white px-5 md:px-10 my-10 ">
       <h1 className="flex mx-auto text-[26px] sm:text-[35px] font-bold shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md p-4 w-full  justify-center items-center mt-5 text-white bg-gradient-to-br from-[#0B80E0] to-[#77b6e9]">
         Privacy Policy
       </h1>
@@ -162,12 +162,24 @@ export default async function PrivacyPolicy({
       </p>
       <h3 className="text-[18px] font-bold mt-2 ">Definitions</h3>
 
-      <p >For the purposes of this Privacy Policy:</p>
+      <p>For the purposes of this Privacy Policy:</p>
       <ul className="flex flex-col gap-2 mt-6">
         {terms.map((term, index) => (
           <li key={index}>
             <p>
-              <strong>{term.title}</strong> {term.description}
+              <strong>{term.title}</strong>:{" "}
+              {term.description.includes("https") ? (
+                <a
+                  href="https://inshorten.com"
+                  rel="external nofollow noopener"
+                  target="_blank"
+                  className="text-[#0B80E1] underline"
+                >
+                  {term.description.match(/https:\/\/[^ ]+/)}
+                </a>
+              ) : (
+                term.description
+              )}
             </p>
           </li>
         ))}
@@ -516,9 +528,7 @@ export default async function PrivacyPolicy({
         If you have any questions about this Privacy Policy, You can contact us:
       </p>
       <ul>
-        <li className="text-[#0B80E1] cursor-pointer">
-          By email: contact@inshorten.com
-        </li>
+        <li className="text-[#0B80E1]">By email: contact@inshorten.com</li>
       </ul>
     </main>
   );

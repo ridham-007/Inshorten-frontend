@@ -68,7 +68,7 @@ export default async function TermsAndCondition({
   ];
 
   return (
-    <main className="flex w-full flex-col flex-wrap h-auto gap-1   bg-white px-5 md:px-10 mt-10">
+    <main className="flex w-full flex-col flex-wrap h-auto gap-1   bg-white px-5 md:px-10 my-10">
       <h1 className="flex mx-auto text-[26px] sm:text-[35px] font-bold shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md p-4 w-full  justify-center items-center mt-5 text-white bg-gradient-to-br from-[#0B80E0] to-[#77b6e9]">
         Terms and Condition
       </h1>
@@ -321,7 +321,7 @@ export default async function TermsAndCondition({
         contact us:
       </p>
       <ul>
-        <li className="text-[#0B80E1] cursor-pointer">By email: contact@inshorten.com</li>
+        <li className="text-[#0B80E1] ">By email: contact@inshorten.com</li>
       </ul>
     </main>
   );
