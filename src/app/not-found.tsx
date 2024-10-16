@@ -20,9 +20,9 @@ export default function NotFound() {
           </p>
           <CustomButton
             type="button"
-            callback={() => router.replace("/")}
+            onClick={() => router.replace("/")}
             label={"Back to home"}
-            className="mt-[52px] py-2 text-lg w-[250px] h-[50px]"
+            className="mt-[52px] py-2 text-lg w-[250px] h-[50px] bg-black"
           ></CustomButton>
         </div>
       </div>

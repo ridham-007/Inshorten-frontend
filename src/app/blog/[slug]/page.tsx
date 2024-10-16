@@ -1,13 +1,12 @@
-import { getArticleBySlug, getArticleList } from "@/app/actions";
-import AdCustom from "@/components/AdCustom";
-import DynamicNewsWall, {
-  DynamicNewsWallSkeleton,
-} from "@/components/blog-banner-side";
-import ShowArticle, { ArticleSkeleton } from "@/components/show-article";
 import { info } from "@/utils/ads";
 import { Metadata, ResolvingMetadata } from "next";
 import React, { Suspense } from "react";
-
+import dynamic from "next/dynamic";
+import ShowArticle, { ArticleSkeleton } from "@/components/show-article";
+import DynamicNewsWall, {
+  DynamicNewsWallSkeleton,
+} from "@/components/blog-banner-side";
+const AdCustom = dynamic(() => import("@/components/AdCustom"), { ssr: false });
 export async function generateMetadata(
   {
     params,
@@ -38,14 +37,12 @@ export async function generateMetadata(
             metaData?.openGraph?.ogTitle ||
             metaData?.name ||
             metaData?.title)) ||
-        "Plagiarism Remover",
+        "AI Text Humanizer",
       description:
         metaData?.seo_description ||
         metaData?.description ||
-        "Plagiarism Remover",
-      ...(metaData?.keywords && {
-        keywords: metaData?.keywords,
-      }),
+        "AI Text Humanizer",
+      keywords: metaData?.keywords && [metaData?.keywords?.split(",")],
       openGraph: {
         ...((metaData?.openGraph?.title || metaData?.openGraph?.ogTitle) && {
           title: metaData?.openGraph?.title || metaData?.openGraph?.ogTitle,
@@ -56,7 +53,9 @@ export async function generateMetadata(
             metaData?.openGraph?.description ||
             metaData?.openGraph?.ogDescription,
         }),
-        url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${slug}`,
+        ...((metaData?.openGraph?.url || metaData?.openGraph?.ogUrl) && {
+          url: metaData?.openGraph?.url || metaData?.openGraph?.ogUrl,
+        }),
         ...((metaData?.openGraph?.type || metaData?.openGraph?.ogType) && {
           type: metaData?.openGraph?.type || metaData?.openGraph?.ogType || "",
         }),
@@ -80,22 +79,22 @@ export async function generateMetadata(
         images: "",
       },
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${slug}`,
+        canonical: process.env.NEXT_PUBLIC_SITE_URL,
       },
     };
   } catch (e) {
     return {
-      title: "AI plagiarism remover for Free | The Best AI Text Converter",
+      title: "AI Text Humanizer for Free | The Best AI HumanText Converter",
       description:
-        "BrainAITools is an online, free AI text converter that turns the AI generated text into a human readable text and best plagiarism remover.",
+        "Ai Text Humanize is an online, free AI text converter that turns the AI generated text into a human readable text and best plagiarism remover.",
       keywords:
-        "BrainAITools, Humanize AI Text, Humanize AI, AI Text Converter, AI to Human Text Converter, Bypass AI Detector, Bypass plagiarism, Convert AI Text, paraphraser tool, ai paraphraser, text paraphraser, paraphrase text, paraphraser online, online paraphraser, text paraphrase, paraphrase text online, best paraphraser, paraphraser tools, paraphrase a text, ai text paraphrase, auto paraphraser, automatic paraphraser, paraphraser generator, text paraphrase online, ai text paraphraser, text to paraphrase, ai to paraphrase text, ai paraphrase text, paraphrase english text online, website to paraphrase text, paraphrase ai text, paraphrase text english, ChatGPT Content Converter, ChatGPT Content To Human, Bard Content to Human Text, Convert AI Text",
+        "Humanize AI Text, Humanize AI, AI Text Converter, AI to Human Text Converter, Bypass AI Detector, Convert AI Text",
       openGraph: {
         url: process.env.NEXT_PUBLIC_SITE_URL,
         type: "website",
-        title: "AI plagiarism remover for Free | The Best AI Text Converter",
+        title: "AI Text Humanizer for Free | The Best AI HumanText Converter",
         description:
-          "BrainAITools is an online, free AI text converter that turns the AI generated text into a human readable text and best plagiarism remover.",
+          "Ai Text Humanize is an online, free AI text converter that turns the AI generated text into a human readable text and best plagiarism remover.",
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/logo.png`,
@@ -111,23 +110,19 @@ export async function generateMetadata(
 
 const Article = async (props: any) => {
   return (
-    <main className="flex w-full flex-wrap gap-2 px-3">
-      <section className="flex flex-col flex-1 basis-[100%] md:basis-[68%] overflow-auto">
+    <main className="flex w-full max-w-[1440px] self-center flex-wrap gap-2 px-3 bg-white mt-10">
+      <section className="flex flex-col flex-1 basis-[100%] md:basis-[68%] overflow-auto ">
         <Suspense fallback={<ArticleSkeleton />}>
           {(async function () {
-            const articleResponse = await getArticleBySlug(props?.params?.slug);
-            //   return <BlogBanner articles={articleResponse?.data as any} />;
-            return <ShowArticle article={articleResponse?.data as any} />;
+            return <ShowArticle slug={props?.params?.slug as any} />;
           })()}
         </Suspense>
       </section>
 
-      <section className="flex flex-col flex-1 basis-[100%] md:basis-[22%] px-2 gap-4">
+      <section className="flex flex-col flex-1 basis-[100%] md:basis-[22%] px-2 gap-4 ">
         <Suspense fallback={<DynamicNewsWallSkeleton label="Popular" />}>
           {(async function () {
-            let articleResponse: any = await getArticleList("recent");
-            let articles = [...articleResponse?.data].slice(0, 6);
-            return <DynamicNewsWall title="Popular" news={articles as any} />;
+            return <DynamicNewsWall title="Popular" start={0} end={6} />;
           })()}
         </Suspense>
         <AdCustom
@@ -137,9 +132,7 @@ const Article = async (props: any) => {
         />
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           {(async function () {
-            let articleResponse: any = await getArticleList("recent");
-            let articles = [...articleResponse?.data].slice(6);
-            return <DynamicNewsWall title="Recent" news={articles as any} />;
+            return <DynamicNewsWall title="Recent" start={6} />;
           })()}
         </Suspense>
       </section>

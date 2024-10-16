@@ -11,7 +11,7 @@ const ImageWithFallback = (props: ImageWithFallbackProps) => {
   return (
     <Image
       alt={props.alt}
-      src={!!imgSrc?.trim() ? imgSrc.trim(): "/images/preview.jpg"}
+      src={!!imgSrc?.trim() ? imgSrc.trim() : "/images/preview.jpg"}
       width={160}
       height={100}
       unoptimized={true}
@@ -19,7 +19,7 @@ const ImageWithFallback = (props: ImageWithFallbackProps) => {
       layout="responsive"
       className="flex w-full h-0 min-h-full object-fill rounded-sm"
       onError={() => {
-        setImgSrc("/images/preview.jpg");
+        setImgSrc("/images/preview.png");
       }}
     />
   );
