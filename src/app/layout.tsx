@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang={"en"} suppressHydrationWarning>
       <head></head>
       <body
-        className={`${inter.className} flex w-full h-dvh justify-center `}
+        className={`${inter.className} flex w-full max-w-[1440px] mx-auto h-dvh overflow-auto`}
         suppressHydrationWarning={true}
         style={{
           backgroundImage: "url('/images/background.png')",
@@ -25,7 +25,7 @@ export default function RootLayout({
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="flex flex-col w-full px-3 sm:px-10 overflow-auto ">
+        <div className="flex flex-col w-full px-3 sm:px-10 self-center items-center">
           <Header />
           {children}
           <Footer />
