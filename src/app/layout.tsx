@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang={"en"} suppressHydrationWarning>
       <head></head>
       <body
-        className={`${inter.className} flex w-full max-w-[1440px] mx-auto h-dvh overflow-auto`}
+        className={`${inter.className} flex w-full max-w-[1440px] mx-auto min-h-dvh overflow-auto`}
         suppressHydrationWarning={true}
         style={{
           backgroundImage: "url('/images/background.png')",

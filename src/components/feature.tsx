@@ -44,7 +44,7 @@ const featureData = [
 
 const Feature = () => {
   return (
-    <div className="flex flex-col w-full max-w-[1400px] mx-auto gap-20 mb-16">
+    <div className="flex flex-col w-full mx-auto gap-20">
       <div className="flex flex-col">
         <div className="text-center text-[38px] font-semibold">Features</div>
         <div className="w-full max-w-[1000px] self-center text-center text-[14px] sm:text-[16px] text-gray-600">
