@@ -99,66 +99,66 @@ const QrCode = () => {
         Creating QR codes should be quick, easy, and straightforward. Our tool
         allows you to generate QR code for your business or personal needs.
       </div>
-      <div className="flex w-full my-5 justify-center">
-        <div className="flex flex-col px-5 py-5 w-full max-w-[400px] gap-12 items-center">
-          <div className="flex flex-col w-full gap-5">
-            <div className="flex items-center gap-2">
-              <RiNumber1 className="bg-black text-white rounded-full text-[25px] sm:text-[30px] font-extrabold p-1 sm:p-2" />
-              <div className="font-medium">Enter QR URL</div>
-            </div>
-            <input
-              type="text"
-              name="data"
-              value={inputData.data}
-              onChange={handleInputChange}
-              placeholder="Enter URL, Text, or Mobile number here..."
-              className="px-2 border border-gray-300 h-[40px] w-auto sm:w-full sm:max-w-[300px] bg-white text-[14px] outline-black"
-            />
-          </div>
-          <div className="flex flex-col w-full gap-5">
-            <div className="flex items-center gap-2">
-              <RiNumber2 className="bg-black text-white rounded-full text-[25px] sm:text-[30px] font-extrabold p-1 sm:p-2" />
-              <div className=" font-medium">
-                Generate QR Code and Download
+      <div className="flex w-full">
+        <div className="flex w-full my-5 justify-center">
+          <div className="flex flex-col px-5 py-5 w-full max-w-[400px] gap-12 items-center">
+            <div className="flex flex-col w-full gap-5">
+              <div className="flex items-center gap-2">
+                <RiNumber1 className="bg-black text-white rounded-full text-[25px] sm:text-[30px] font-extrabold p-1 sm:p-2" />
+                <div className="font-medium">Enter QR URL</div>
               </div>
+              <input
+                type="text"
+                name="data"
+                value={inputData.data}
+                onChange={handleInputChange}
+                placeholder="Enter URL, Text, or Mobile number here..."
+                className="px-2 border border-gray-300 h-[40px] w-auto sm:w-full sm:max-w-[300px] bg-white text-[14px] outline-black"
+              />
             </div>
-            <div className="flex gap-5">
-              <CustomButton
-                label={loading ? "Loading..." : "QR Code"}
-                className={`bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px] ${
-                  loading ? "opacity-50 bg-black" : ""
-                }`}
-                onClick={handleGenerateQRCode}
-                isDisabled={loading}
-              />
-              <CustomButton
-                label={"Download"}
-                className="bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px]"
-                onClick={handleDownloadQRCode}
-              />
+            <div className="flex flex-col w-full gap-5">
+              <div className="flex items-center gap-2">
+                <RiNumber2 className="bg-black text-white rounded-full text-[25px] sm:text-[30px] font-extrabold p-1 sm:p-2" />
+                <div className=" font-medium">
+                  Generate QR Code and Download
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <CustomButton
+                  label={loading ? "Loading..." : "QR Code"}
+                  className={`bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px] ${
+                    loading ? "opacity-50 bg-black" : ""
+                  }`}
+                  onClick={handleGenerateQRCode}
+                  isDisabled={loading}
+                />
+                <CustomButton
+                  label={"Download"}
+                  className="bg-black px-2 w-[140px] sm:w-[160px] text-[14px] sm:text-[16px]"
+                  onClick={handleDownloadQRCode}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* QR Code Display */}
-      <div className="flex justify-center w-full my-5">
+        {/* QR Code Display */}
         {shortUrl && (
-          <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-2 sm:p-5 rounded-md">
-            <QRCodeSVG
-              id="qr-code"
-              value={shortUrl}
-              size={size}
-              bgColor={backgroundColor}
-              fgColor={color}
-              level="Q"
-              includeMargin={true}
-            />
+          <div className="flex justify-center w-full my-5">
+            <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-2 sm:p-5 rounded-md">
+              <QRCodeSVG
+                id="qr-code"
+                value={shortUrl}
+                size={size}
+                bgColor={backgroundColor}
+                fgColor={color}
+                level="Q"
+                includeMargin={true}
+              />
+            </div>
           </div>
         )}
       </div>
-      {errorMessage && (
-        <div className="text-red-600 mt-4">{errorMessage}</div>
-      )}
+      {errorMessage && <div className="text-red-600 mt-4">{errorMessage}</div>}
       <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 sm:gap-1 whitespace-nowrap">
         By clicking Static URL Shorten, you agree to our
         <span
