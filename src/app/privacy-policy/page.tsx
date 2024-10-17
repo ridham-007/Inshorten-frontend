@@ -209,7 +209,7 @@ export default async function PrivacyPolicy({
       <h4>Usage Data</h4>
       <p>Usage Data is collected automatically when using the Service.</p>
       <p>
-        Usage Data may include information such as Your Device's Internet
+        Usage Data may include information such as Your Device&apos;s Internet
         Protocol address (e.g. IP address), browser type, browser version, the
         pages of our Service that You visit, the time and date of Your visit,
         the time spent on those pages, unique device identifiers and other
@@ -237,7 +237,7 @@ export default async function PrivacyPolicy({
       </p>
       <ul>
         <li className="mt-4 ">
-          <strong className="text-[18px] ">Cookies or Browser Cookies.</strong>{" "}
+          <strong className="text-[18px] ">Cookies or Browser Cookies.</strong>
           A cookie is a small file placed on Your Device. You can instruct Your
           browser to refuse all Cookies or to indicate when a Cookie is being
           sent. However, if You do not accept Cookies, You may not be able to
@@ -388,7 +388,7 @@ export default async function PrivacyPolicy({
         Transfer of Your Personal Data
       </h3>
       <p>
-        Your information, including Personal Data, is processed at the Company's
+        Your information, including Personal Data, is processed at the Company&apos;s
         operating offices and in any other places where the parties involved in
         the processing are located. It means that this information may be
         transferred to — and maintained on — computers located outside of Your
@@ -476,7 +476,7 @@ export default async function PrivacyPolicy({
         security.
       </p>
       <h2 className="text-[20px] font-semibold mt-5 text-[#0B80E1]">
-        Children's Privacy
+        Children&apos;s Privacy
       </h2>
       <p>
         Our Service does not address anyone under the age of 13. We do not
@@ -490,7 +490,7 @@ export default async function PrivacyPolicy({
       <p>
         If We need to rely on consent as a legal basis for processing Your
         information and Your country requires consent from a parent, We may
-        require Your parent's consent before We collect and use that
+        require Your parent&apos;s consent before We collect and use that
         information.
       </p>
       <h2 className="text-[20px] font-semibold mt-5 text-[#0B80E1]">
@@ -499,7 +499,7 @@ export default async function PrivacyPolicy({
       <p>
         Our Service may contain links to other websites that are not operated by
         Us. If You click on a third party link, You will be directed to that
-        third party's site. We strongly advise You to review the Privacy Policy
+        third party&apos;s site. We strongly advise You to review the Privacy Policy
         of every site You visit.
       </p>
       <p>
