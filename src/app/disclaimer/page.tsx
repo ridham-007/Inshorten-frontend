@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclaimer - BrainAITools",
+  title: "Disclaimer - InShorten",
   description:
-    "BrainAITools is an AI writing tool that combines the ability of AI and man creativeness to help you commission up your capacity base ferment.",
+    "InShorten provides URL shortening and QR code generation services. Please read our disclaimer to understand the limitations and responsibilities associated with using our services.",
   openGraph: {
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/disclaimer`,
     type: "website",
-    title: "Disclaimer - BrainAITools",
+    title: "Disclaimer - InShorten",
     description:
-      "BrainAITools is an AI writing tool that combines the ability of AI and man creativeness to help you commission up your capacity base ferment.",
+      "InShorten provides URL shortening and QR code generation services. Please read our disclaimer to understand the limitations and responsibilities associated with using our services.",
   },
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/disclaimer`,

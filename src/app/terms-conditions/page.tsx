@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions - BrainAITools",
+  title: "Terms and Conditions - InShorten",
   description:
-    "Review the Terms and Conditions for using BrainAITools's services. Understand your rights and responsibilities as an user of our choline.",
+    "Review the Terms and Conditions for using InShorten services. Understand your rights and responsibilities as a user while utilizing our URL shortening and QR code generation features.",
   openGraph: {
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/terms-conditions`,
     type: "website",
-    title: "Terms and Conditions - BrainAITools",
+    title: "Terms and Conditions - InShorten",
     description:
-      "Review the Terms and Conditions for using BrainAITools's services. Understand your rights and responsibilities as an user of our choline.",
+      "Review the Terms and Conditions for using InShorten services. Understand your rights and responsibilities as a user while utilizing our URL shortening and QR code generation features.",
   },
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/terms-conditions`,
@@ -79,7 +79,9 @@ export default async function TermsAndCondition({
         Please read these terms and conditions carefully before using Our
         Service.
       </p>
-      <h2 className="text-[22px] font-semibold mt-3 text-[#0B80E1]">Interpretation and Definitions</h2>
+      <h2 className="text-[22px] font-semibold mt-3 text-[#0B80E1]">
+        Interpretation and Definitions
+      </h2>
       <h3 className="text-[18px] font-bold mt-2 ">Interpretation</h3>
       <p>
         The words of which the initial letter is capitalized have meanings
@@ -112,7 +114,9 @@ export default async function TermsAndCondition({
         ))}
       </ul>
 
-      <h2 className="mt-3 text-[20px] font-semibold text-[#0B80E1]">Acknowledgment</h2>
+      <h2 className="mt-3 text-[20px] font-semibold text-[#0B80E1]">
+        Acknowledgment
+      </h2>
       <p>
         These are the Terms and Conditions governing the use of this Service and
         the agreement that operates between You and the Company. These Terms and
@@ -163,7 +167,9 @@ export default async function TermsAndCondition({
         We strongly advise You to read the terms and conditions and privacy
         policies of any third-party web sites or services that You visit.
       </p>
-      <h2 className="mt-3 text-[20px] font-semibold text-[#0B80E1]">Termination</h2>
+      <h2 className="mt-3 text-[20px] font-semibold text-[#0B80E1]">
+        Termination
+      </h2>
       <p>
         We may terminate or suspend Your access immediately, without prior
         notice or liability, for any reason whatsoever, including without
@@ -199,8 +205,8 @@ export default async function TermsAndCondition({
         Some states do not allow the exclusion of implied warranties or
         limitation of liability for incidental or consequential damages, which
         means that some of the above limitations may not apply. In these states,
-        each party&apos;s liability will be limited to the greatest extent permitted
-        by law.
+        each party&apos;s liability will be limited to the greatest extent
+        permitted by law.
       </p>
       <h2 className="mt-3 text-[20px] font-semibold text-[#0B80E1]">
         &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer
@@ -226,8 +232,8 @@ export default async function TermsAndCondition({
       </p>
       <p>
         Without limiting the foregoing, neither the Company nor any of the
-        company&apos;s provider makes any representation or warranty of any kind,
-        express or implied: (i) as to the operation or availability of the
+        company&apos;s provider makes any representation or warranty of any
+        kind, express or implied: (i) as to the operation or availability of the
         Service, or the information, content, and materials or products included
         thereon; (ii) that the Service will be uninterrupted or error-free;
         (iii) as to the accuracy, reliability, or currency of any information or
@@ -289,9 +295,9 @@ export default async function TermsAndCondition({
       <p>
         Except as provided herein, the failure to exercise a right or to require
         performance of an obligation under these Terms shall not affect a
-        party&apos;s ability to exercise such right or require such performance at
-        any time thereafter nor shall the waiver of a breach constitute a waiver
-        of any subsequent breach.
+        party&apos;s ability to exercise such right or require such performance
+        at any time thereafter nor shall the waiver of a breach constitute a
+        waiver of any subsequent breach.
       </p>
       <h2 className=" text-[17px] font-semibold">Translation Interpretation</h2>
       <p>
@@ -315,7 +321,9 @@ export default async function TermsAndCondition({
         agree to the new terms, in whole or in part, please stop using the
         website and the Service.
       </p>
-      <h2 className="mt-3 text-[20px] font-semibold text-[#0B80E1]">Contact Us</h2>
+      <h2 className="mt-3 text-[20px] font-semibold text-[#0B80E1]">
+        Contact Us
+      </h2>
       <p>
         If you have any questions about these Terms and Conditions, You can
         contact us:

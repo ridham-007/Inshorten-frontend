@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - BrainAITools",
+  title: "Privacy Policy - InShorten",
   description:
-    "Read BrainAITools's Privacy Policy to learn how we protected and managed your data and privateness spell using our services.",
+    "Explore InShorten Privacy Policy to understand how we protect and manage your data while providing URL shortening and QR code generation services.",
   openGraph: {
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/privacy-policy`,
     type: "website",
-    title: "Privacy Policy - BrainAITools",
+    title: "Privacy Policy - InShorten",
     description:
-      "Read BrainAITools's Privacy Policy to learn how we protected and managed your data and privateness spell using our services.",
+      "Explore InShorten Privacy Policy to understand how we protect and manage your data while providing URL shortening and QR code generation services.",
   },
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/privacy-policy`,
@@ -237,8 +237,8 @@ export default async function PrivacyPolicy({
       </p>
       <ul>
         <li className="mt-4 ">
-          <strong className="text-[18px] ">Cookies or Browser Cookies.</strong>
-          A cookie is a small file placed on Your Device. You can instruct Your
+          <strong className="text-[18px] ">Cookies or Browser Cookies.</strong>A
+          cookie is a small file placed on Your Device. You can instruct Your
           browser to refuse all Cookies or to indicate when a Cookie is being
           sent. However, if You do not accept Cookies, You may not be able to
           use some parts of our Service. Unless you have adjusted Your browser
@@ -388,12 +388,13 @@ export default async function PrivacyPolicy({
         Transfer of Your Personal Data
       </h3>
       <p>
-        Your information, including Personal Data, is processed at the Company&apos;s
-        operating offices and in any other places where the parties involved in
-        the processing are located. It means that this information may be
-        transferred to — and maintained on — computers located outside of Your
-        state, province, country or other governmental jurisdiction where the
-        data protection laws may differ than those from Your jurisdiction.
+        Your information, including Personal Data, is processed at the
+        Company&apos;s operating offices and in any other places where the
+        parties involved in the processing are located. It means that this
+        information may be transferred to — and maintained on — computers
+        located outside of Your state, province, country or other governmental
+        jurisdiction where the data protection laws may differ than those from
+        Your jurisdiction.
       </p>
       <p>
         Your consent to this Privacy Policy followed by Your submission of such
@@ -499,8 +500,8 @@ export default async function PrivacyPolicy({
       <p>
         Our Service may contain links to other websites that are not operated by
         Us. If You click on a third party link, You will be directed to that
-        third party&apos;s site. We strongly advise You to review the Privacy Policy
-        of every site You visit.
+        third party&apos;s site. We strongly advise You to review the Privacy
+        Policy of every site You visit.
       </p>
       <p>
         We have no control over and assume no responsibility for the content,
