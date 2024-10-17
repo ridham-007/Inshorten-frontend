@@ -6,11 +6,13 @@ import CustomButton from "./ui/custom-buttom";
 import { useRouter } from "next/navigation";
 import { getShortenUrl } from "@/app/actions";
 import Spinner from "./loader";
-
+interface InputData {
+  data: string;
+}
 const QrCode = () => {
   const router = useRouter();
 
-  const [inputData, setInputData] = useState({
+  const [inputData, setInputData] = useState<InputData>({
     data: "",
   });
   const [shortUrl, setShortUrl] = useState("");

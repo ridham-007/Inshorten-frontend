@@ -54,9 +54,9 @@ export default function Footer() {
       className={`flex flex-col h-auto w-full bg-[#fff] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md p-7`}
     >
       <div className="flex flex-col w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:sm:grid-cols-4 w-full lg:justify-between gap-5">
-          <div className="flex flex-col w-full max-w-[300px] mx-auto gap-2">
-            <div className="text-[18px] sm:text-[20px] font-semibold text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:sm:grid-cols-4 w-full lg:justify-between gap-5 lg:gap-16 ">
+          <div className="flex flex-col gap-1 md:gap-2 items-start">
+            <div className="text-[18px] sm:text-[20px] font-semibold self-start">
               About Us
             </div>
             <div className="text-[14px] sm:text-[16px]">
@@ -65,8 +65,8 @@ export default function Footer() {
               manage urls more...
             </div>
           </div>
-          <div className="flex flex-col gap-2 items-center">
-            <div className="text-[18px] font-semibold text-center">
+          <div className="flex flex-col gap-1 md:gap-2 items-start">
+            <div className="text-[18px] font-semibold self-start">
               Popular Features
             </div>
             <div className="flex flex-row md:flex-col gap-5 sm:gap-10 md:gap-0 text-[15px] ml-1 text-nowrap ">
@@ -81,11 +81,11 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col  gap-2 items-center">
-            <div className="text-[18px] sm:text-[20px] font-semibold text-center lg:text-start">
+          <div className="flex flex-col gap-1 md:gap-2 items-start">
+            <div className="text-[18px] sm:text-[20px] font-semibold self-start">
               Quick Link
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 text-[15px] sm:text-[16px] gap-2 sm:gap-2 md:gap-0 lg:gap-0 mx-auto lg:mx-0 ">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 text-[15px] sm:text-[16px] gap-2 sm:gap-2 md:gap-0 lg:gap-0  ">
               {navData.slice(0, 4).map((link: any, index) => (
                 <Link
                   href={link.href}
@@ -104,17 +104,17 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-2 items-center">
-            <div className="text-[18px] sm:text-[20px] font-semibold text-center">
+          <div className="flex flex-col gap-1 md:gap-2 items-start">
+            <div className="text-[18px] sm:text-[20px] font-semibold self-start">
               Contact
             </div>
-            <div className="text-center text-[14px] md:text-[16px]">
+            <div className="text-[14px] md:text-[16px]">
               e-mail: contact@inshorten.com
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-2 w-full justify-center items-center relative mt-10">
-          <div className="border-[1px] border-[#eeeff0] w-full  "></div>
+          <div className="border-[1px] border-[#eeeff0] w-full"></div>
           <div className="flex gap-3 md:gap-6 absolute bottom-[90px] bg-white px-4">
             {socialLink.map((socialLink: any, index) => (
               <div

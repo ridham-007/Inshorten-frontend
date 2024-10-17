@@ -5,6 +5,7 @@ import Image from "next/image";
 import { PiLink, PiLinkSimpleBold } from "react-icons/pi";
 import { IoQrCodeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Information = () => {
   const router = useRouter();
@@ -30,9 +31,6 @@ const Information = () => {
     },
   ];
 
-  const handleRedirect = (route: any) => {
-    router.push(route);
-  };
   const handleStaticUrl = () => {
     router.push("/static-url");
   };
@@ -59,10 +57,11 @@ const Information = () => {
           </div>
           <div className="flex w-full flex-row flex-wrap gap-4 justify-center lg:justify-start">
             {items.map((item, index) => (
-              <div
+              <Link
                 key={index}
-                onClick={() => handleRedirect(item.route)}
+                href={item.route}
                 className="flex w-full max-w-[180px] h-[60px] gap-1 border border-gray-600 rounded-md  justify-center items-center cursor-pointer bg-white p-2"
+                replace
               >
                 <div className="flex justify-center items-center">
                   {item.icon}
@@ -75,7 +74,7 @@ const Information = () => {
                     {item.description}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
