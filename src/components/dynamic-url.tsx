@@ -14,6 +14,7 @@ const DynamicUrl = () => {
   const [customWord, setCustomWord] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleCustomUrl = async () => {
     if (inputUrl) {
@@ -63,6 +64,13 @@ const DynamicUrl = () => {
       setErrorMessage("Only alphanumeric characters and (-,_) are allowed.");
     }
   };
+  const handleCopyUrl = () => {
+    if (shortUrl) {
+      navigator.clipboard.writeText(shortUrl).then(() => {
+        setCopied(true);
+      });
+    }
+  };
 
   return (
     <div className="flex flex-col w-full sm:max-w-[1100px] mx-auto justify-center border border-gray-500 rounded-md bg-white py-8 px-5 sm:px-10">
@@ -100,28 +108,39 @@ const DynamicUrl = () => {
 
         <CustomButton
           label={loading ? <Spinner /> : "Shorten URL"}
-          className={`bg-black px-2 text-[16px] h-[50px] w-[140px] md:max-w-[15%] flex sm:self-end text-nowrap justify-center items-center`}
+          className={`bg-black px-2 text-[15px] lg:text-[16px] h-[50px] w-[140px] md:max-w-[17%] flex sm:self-end text-nowrap justify-center items-center`}
           onClick={handleCustomUrl}
           isDisabled={loading}
         />
       </div>
 
-      {shortUrl && (
-        <div className="flex flex-col sm:flex-row text-[16px] my-4 text-gray-600 items-center ">
-          Shortened URL:{" "}
-          <Link
-            className="text-blue-600 underline mx-2 cursor-pointer"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={shortUrl}
+      <div className="flex flex-col md:flex-row gap-3 md:gap-2 items-center">
+        {shortUrl && (
+          <div className="flex flex-col sm:flex-row text-[16px] md:my-4 text-gray-600 items-center text-nowrap">
+            Shortened URL:
+            <Link
+              className="text-blue-600 underline mx-2 cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={shortUrl}
+            >
+              {shortUrl}
+            </Link>
+          </div>
+        )}
+        {shortUrl && (
+          <div
+            className="flex items-center gap-1 text-[15px] bg-black text-white py-1 px-3 rounded-md cursor-pointer text-nowrap"
+            title={copied ? "copied" : "copy url"}
+            onClick={handleCopyUrl}
           >
-            {shortUrl}
-          </Link>
-        </div>
-      )}
+            {copied ? "Copied!" : "Copy url"}
+          </div>
+        )}
+      </div>
       {errorMessage && <div className="text-red-600 ">{errorMessage}</div>}
 
-      <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 sm:gap-1 whitespace-nowrap">
+      <div className="flex flex-wrap justify-center text-[14px] sm:text-[15px] text-gray-600 sm:gap-1 whitespace-nowrap mt-10">
         By clicking Static URL Shorten, you agree to our
         <span
           className="text-blue-500 hover:underline hover:cursor-pointer ml-1 mr-1"
