@@ -27,7 +27,7 @@ const Information = () => {
       icon: <IoQrCodeOutline className="text-[26px] sm:text-[30px]" />,
       title: " QR Code",
       description: "Create QR Code",
-      route: "/qr-code",
+      route: "/generate-qr-codes",
     },
   ];
 

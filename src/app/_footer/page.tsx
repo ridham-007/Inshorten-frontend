@@ -45,7 +45,7 @@ export default function Footer() {
   const features = [
     { label: "Static URL", url: "static-url" },
     { label: "Dynamic URL", url: "dynamic-url" },
-    { label: "QR Code", url: "qr-code" },
+    { label: "QR Code", url: "generate-qr-codes" },
   ];
   return (
     <footer

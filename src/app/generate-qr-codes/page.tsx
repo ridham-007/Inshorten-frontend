@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description: "Easily create qr code free. Boost your marketing strategy and reach your target audience with custom-generate qr codes for promotions, products, and more.",
   keywords: "generate qr codes, qr barcode generator, create qr code free",
   openGraph: {
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/qr-code`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/generate-qr-codes`,
     type: "website",
     title: "Generate QR Codes |create qr code free-InShorten",
     description: "Easily create qr code free. Boost your marketing strategy and reach your target audience with custom-generate qr codes for promotions, products, and more.",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/qr-code`
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/generate-qr-codes`
   }
 };
 

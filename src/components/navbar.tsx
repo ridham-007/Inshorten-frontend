@@ -11,7 +11,7 @@ export default function Navbar(props: NavbarProps) {
   const navData = [
     { title: "Static URL", href: "/static-url" },
     { title: "Dynamic URL", href: "/dynamic-url" },
-    { title: "QR Code", href: "/qr-code" },
+    { title: "QR Code", href: "/generate-qr-codes" },
     { title: "Blog", href: "/blog" },
   ];
   const [open, setOpen] = useState(false);
