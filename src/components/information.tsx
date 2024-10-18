@@ -21,7 +21,7 @@ const Information = () => {
       icon: <PiLinkSimpleBold className="text-[26px] sm:text-[30px]" />,
       title: "Dynamic URL ",
       description: "This url is editable",
-      route: "/dynamic-url",
+      route: "/url-shortening-service",
     },
     {
       icon: <IoQrCodeOutline className="text-[26px] sm:text-[30px]" />,

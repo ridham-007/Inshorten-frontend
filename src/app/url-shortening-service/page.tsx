@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description: "Transform your long URLs into dynamic short links with our url shortening service. get simple and easy to use free url shortener.",
   keywords: "url shortening service, free url Shortener, url shortner",
   openGraph: {
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/dynamic-url`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/url-shortening-service`,
     type: "website",
     title: "Url shortening service |free url Shortener -InShorten",
     description: "Transform your long URLs into dynamic short links with our url shortening service. get simple and easy to use free url shortener.",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/dynamic-url`
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/url-shortening-service`
   }
 };
 

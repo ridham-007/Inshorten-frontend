@@ -44,7 +44,7 @@ export default function Footer() {
   ];
   const features = [
     { label: "Static URL", url: "url-link-shortener" },
-    { label: "Dynamic URL", url: "dynamic-url" },
+    { label: "Dynamic URL", url: "url-shortening-service" },
     { label: "QR Code", url: "generate-qr-codes" },
   ];
   return (
