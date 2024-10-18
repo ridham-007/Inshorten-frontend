@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description: "Create a short URL for easy to share on sites , URL Link Shortener use for manage your link its free, easy and fast tool.",
   keywords:"url link shortener, create a short url, url shortening service",
   openGraph: {
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/static-url`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/url-link-shortener`,
     type: "website",
     title: "Url Link Shortener | create a link shortener- InShorten",
     description: "Create a short URL for easy to share on sites , URL Link Shortener use for manage your link its free, easy and fast tool.",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/static-url`
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/url-link-shortener`
   }
 };
 

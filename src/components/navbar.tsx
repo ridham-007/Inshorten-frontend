@@ -9,7 +9,7 @@ export interface NavbarProps {}
 
 export default function Navbar(props: NavbarProps) {
   const navData = [
-    { title: "Static URL", href: "/static-url" },
+    { title: "Static URL", href: "/url-link-shortener" },
     { title: "Dynamic URL", href: "/dynamic-url" },
     { title: "QR Code", href: "/generate-qr-codes" },
     { title: "Blog", href: "/blog" },

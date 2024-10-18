@@ -15,7 +15,7 @@ const Information = () => {
       icon: <PiLink className="text-[26px] sm:text-[30px]" />,
       title: "Static URL ",
       description: "Create short url",
-      route: "/static-url",
+      route: "/url-link-shortener",
     },
     {
       icon: <PiLinkSimpleBold className="text-[26px] sm:text-[30px]" />,
@@ -32,7 +32,7 @@ const Information = () => {
   ];
 
   const handleStaticUrl = () => {
-    router.push("/static-url");
+    router.push("/url-link-shortener");
   };
 
   return (
