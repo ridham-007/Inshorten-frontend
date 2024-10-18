@@ -109,7 +109,7 @@ export default function Footer() {
               Contact
             </div>
             <div className="text-[14px] md:text-[16px]">
-              e-mail: contact@inshorten.com
+              email: contact@inshorten.com
             </div>
           </div>
         </div>
