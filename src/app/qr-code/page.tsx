@@ -1,6 +1,23 @@
 import React from "react";
 import QrCode from "@/components/qr-code";
 import Content from "@/components/content";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Generate QR Codes |create qr code free-InShorten",
+  description: "Easily create qr code free. Boost your marketing strategy and reach your target audience with custom-generate qr codes for promotions, products, and more.",
+  keywords: "generate qr codes, qr barcode generator, create qr code free",
+  openGraph: {
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/qr-code`,
+    type: "website",
+    title: "Generate QR Codes |create qr code free-InShorten",
+    description: "Easily create qr code free. Boost your marketing strategy and reach your target audience with custom-generate qr codes for promotions, products, and more.",
+  },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/qr-code`
+  }
+};
+
 
 const QrCodeLayout = () => {
   return (

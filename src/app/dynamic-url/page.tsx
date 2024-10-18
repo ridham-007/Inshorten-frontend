@@ -1,6 +1,23 @@
 import Content from "@/components/content";
 import DynamicUrl from "@/components/dynamic-url";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Url shortening service |free url Shortener -InShorten",
+  description: "Transform your long URLs into dynamic short links with our url shortening service. get simple and easy to use free url shortener.",
+  keywords: "url shortening service, free url Shortener, url shortner",
+  openGraph: {
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/dynamic-url`,
+    type: "website",
+    title: "Url shortening service |free url Shortener -InShorten",
+    description: "Transform your long URLs into dynamic short links with our url shortening service. get simple and easy to use free url shortener.",
+  },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/dynamic-url`
+  }
+};
+
 
 const DynamicUrlLayout = () => {
   return (
