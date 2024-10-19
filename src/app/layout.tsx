@@ -3,6 +3,8 @@ import { Montserrat } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "./_header/page";
 import Footer from "./_footer/page";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -25,6 +27,7 @@ export default function RootLayout({
           backgroundAttachment: "fixed",
         }}
       >
+              <GoogleAnalytics gaId="G-NNNCWLXYW2" />
         <div className="flex flex-col w-full px-3 sm:px-10">
           <Header />
           <div className="flex flex-col w-full flex-1">

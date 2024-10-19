@@ -61,7 +61,6 @@ const Information = () => {
                 key={index}
                 href={item.route}
                 className="flex w-full max-w-[180px] h-[60px] gap-1 border border-gray-600 rounded-md  justify-center items-center cursor-pointer bg-white p-2"
-                replace
               >
                 <div className="flex justify-center items-center">
                   {item.icon}
