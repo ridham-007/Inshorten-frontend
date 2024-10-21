@@ -27,7 +27,7 @@ export default function RootLayout({
           backgroundAttachment: "fixed",
         }}
       >
-              <GoogleAnalytics gaId="G-NNNCWLXYW2" />
+        <GoogleAnalytics gaId="G-Y2FCGQGZ8S" />
         <div className="flex flex-col w-full px-3 sm:px-10">
           <Header />
           <div className="flex flex-col w-full flex-1">
