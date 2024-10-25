@@ -3,10 +3,32 @@ import QrCode from "@/components/qr-code";
 import Content from "@/components/content";
 import { Metadata } from "next";
 
+const keywordsArray = [
+  'qr maker free',
+  'qr code for youtube',
+  'qr code for instagram account',
+  'create instagram qr code',
+  'generate facebook qr code',
+  'create facebook page qr code',
+  'instagram qrcode generator',
+  'qr code for instagram',
+  'qr code for twitter',
+  'create whatsapp qr code',
+  'qr code google drive',
+  'website qr code generator',
+  'web page qr code generator',
+  'qr generator website',
+  'barcode maker online',
+  'free barcode creator',
+  'generate qr codes',
+  'qr barcode generator',
+  'create qr code free'
+]
+
 export const metadata: Metadata = {
   title: "Generate QR Codes |create qr code free-InShorten",
   description: "Easily create qr code free. Boost your marketing strategy and reach your target audience with custom-generate qr codes for promotions, products, and more.",
-  keywords: "generate qr codes, qr barcode generator, create qr code free",
+  keywords: keywordsArray.toString(),
   openGraph: {
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/generate-qr-codes`,
     type: "website",

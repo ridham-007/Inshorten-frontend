@@ -3,10 +3,29 @@ import DynamicUrl from "@/components/dynamic-url";
 import { Metadata } from "next";
 import React from "react";
 
+const keywordsArray = [
+  'url link shortener',
+  'url shortening service',
+  'create a short url',
+  'best free url shortener',
+  'link shortener for instagram',
+  'url shortener for instagram',
+  'link shortener instagram',
+  'shorten url for free',
+  'shorten url for twitter',
+  'short url for youtube',
+  'youtube shortcut link',
+  'url shortener for facebook',
+  'whatsapp url shortener',
+  'google drive link shortener',
+  'shorten website link',
+  'google site shortener',
+];
+
 export const metadata: Metadata = {
   title: "Url shortening service |free url Shortener -InShorten",
   description: "Transform your long URLs into dynamic short links with our url shortening service. get simple and easy to use free url shortener.",
-  keywords: "url shortening service, free url Shortener, url shortner",
+  keywords: keywordsArray.toString(),
   openGraph: {
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/url-shortening-service`,
     type: "website",

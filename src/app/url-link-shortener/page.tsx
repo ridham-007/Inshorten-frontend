@@ -3,10 +3,29 @@ import Content from "@/components/content";
 import React from "react";
 import { Metadata } from "next";
 
+const keywordsArray = [
+  'url link shortener',
+  'url shortening service',
+  'create a short url',
+  'best free url shortener',
+  'link shortener for instagram',
+  'url shortener for instagram',
+  'link shortener instagram',
+  'shorten url for free',
+  'shorten url for twitter',
+  'short url for youtube',
+  'youtube shortcut link',
+  'url shortener for facebook',
+  'whatsapp url shortener',
+  'google drive link shortener',
+  'shorten website link',
+  'google site shortener',
+];
+
 export const metadata: Metadata = {
   title: "Url Link Shortener | create a link shortener- InShorten",
   description: "Create a short URL for easy to share on sites , URL Link Shortener use for manage your link its free, easy and fast tool.",
-  keywords:"url link shortener, create a short url, url shortening service",
+  keywords: keywordsArray.toString(),
   openGraph: {
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/url-link-shortener`,
     type: "website",
