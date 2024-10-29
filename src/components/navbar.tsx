@@ -39,9 +39,9 @@ export default function Navbar(props: NavbarProps) {
     <nav className="flex flex-col w-full h-[80px] justify-center relative z-[1000] bg-white shadow-lg md:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md">
       <div className="flex w-full justify-between items-center px-5">
         <Image
-          src="/images/Grouplogo.png"
-          width={140}
-          height={140}
+          src="/images/Group.svg"
+          width={110}
+          height={110}
           alt="Picture of the author"
         />
         <div className="flex items-center blog-list font-medium">
