@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import Logo from "@/components/logo";
 import { useRouter } from "next/navigation";
 import { RiFacebookFill, RiLinkedinFill } from "react-icons/ri";
 import { BsInstagram } from "react-icons/bs";
 import { FaRegCopyright, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import Image from "next/image";
 
 export default function Footer() {
   const router = useRouter();
@@ -133,7 +133,12 @@ export default function Footer() {
           </div>
 
           <div className="text-[20px] md:text-[22px] mt-10">
-            <Logo />
+            <Image
+              src="/images/GroupLogo.png"
+              width={140}
+              height={140}
+              alt="Picture of the author"
+            />
           </div>
           <div className="flex w-full justify-center text-[12px] md:text-[14px] text-nowrap">
             <FaRegCopyright className="mr-2 text-[16px]" /> 2024 by InShorten.
