@@ -39,9 +39,9 @@ const Information = () => {
     <div className="flex flex-col lg:flex-row w-full justify-around gap-7">
       <div className="flex flex-col basis-[50%] max-h-fit gap-10 px-1 sm:px-10">
         <div className="flex flex-col gap-1 lg:justify-start justify-center">
-          <div className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] md:text-left text-center ">
+          <h1 className="text-[26px] sm:text-[28px] md:text-[35px] font-bold leading-[30px] md:leading-[40px] md:text-left text-center ">
             Generate QR Codes & short Link with InShorten
-          </div>
+          </h1>
           <div className="text-[14px] sm:text-[16px] text-gray-500 font-normal md:text-left text-center ">
             Simple, Fast & Free. Bringing back the good days!
           </div>
@@ -51,7 +51,7 @@ const Information = () => {
           className="!w-full max-w-[200px] bg-black md:self-start self-center"
           onClick={handleStaticUrl}
         />
-        <div className="flex w-full flex-col gap-5">
+        <h2 className="flex w-full flex-col gap-5">
           <div className="flex font-bold text-gray-700 justify-center lg:justify-start">
             Explore More
           </div>
@@ -66,9 +66,9 @@ const Information = () => {
                   {item.icon}
                 </div>
                 <div className="flex flex-col">
-                  <div className="text-[15px] md:text-[16px] text-gray-700 font-semibold text-nowrap">
+                  <h2 className="text-[15px] md:text-[16px] text-gray-700 font-semibold text-nowrap">
                     {item.title}
-                  </div>
+                  </h2>
                   <div className="w-full max-w-[150px] text-[11px] md:text-[12px] text-gray-500 font-normal text-nowrap">
                     {item.description}
                   </div>
@@ -76,7 +76,7 @@ const Information = () => {
               </Link>
             ))}
           </div>
-        </div>
+        </h2>
       </div>
       <div className="flex basis-[50%] justify-center max-h-fit">
         <Image
