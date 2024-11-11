@@ -55,7 +55,7 @@ export const BlogBanner = () => {
                 width={info.RESPONSIVE_ADS_2.width}
                 height={info.RESPONSIVE_ADS_2.height}
               />
-              <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl mt-[40px]">
+              {/* <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl mt-[40px]">
                 <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
                   <div className="flex flex-col sm:flex-row cursor-pointer basis-full flex-0 justify-around gap-[10px] blog-list bg-white">
                     {articles?.slice(3, 5).map((item: any, index: any) => (
@@ -127,12 +127,12 @@ export const BlogBanner = () => {
                     })}
                   </div>
                 </div>
-              </div>
-              <AdCustom
+              </div> */}
+              {/* <AdCustom
                 dataAdId={info.RESPONSIVE_ADS_4.id}
                 width={info.RESPONSIVE_ADS_4.width}
                 height={info.RESPONSIVE_ADS_4.height}
-              />
+              /> */}
             </div>
           </>
         </>
