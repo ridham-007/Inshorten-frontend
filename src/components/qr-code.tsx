@@ -92,13 +92,13 @@ const QrCode = () => {
 
   return (
     <div className="flex flex-col w-full sm:max-w-[1100px] mx-auto items-center justify-center border border-gray-500 rounded-md bg-white py-8 px-5 sm:px-10">
-      <div className="text-[28px] sm:text-[32px] text-center font-bold">
+      <h1 className="text-[28px] sm:text-[32px] text-center font-bold">
         QR Code generator
-      </div>
-      <div className="flex text-[15px] sm:text-[16px] max-w-[768px] text-center font-normal text-gray-500">
+      </h1>
+      <h4 className="flex text-[15px] sm:text-[16px] max-w-[768px] text-center font-normal text-gray-500">
         Creating QR codes should be quick, easy, and straightforward. Our tool
         allows you to generate QR code for your business or personal needs.
-      </div>
+      </h4>
       <div className="flex flex-col md:flex-row w-full">
         <div className="flex w-full my-5 justify-center">
           <div className="flex flex-col px-5 py-5 w-full max-w-[400px] gap-12 items-center">
