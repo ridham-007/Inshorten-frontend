@@ -40,7 +40,7 @@ export default function CategoryBanner() {
       {articles.length ? (
         <>
           <div className="flex w-full flex-wrap gap-2 h-fit blog-list">
-            {[...articles, ...articles].map((item: any, index: any) => {
+            {articles.map((item: any, index: any) => {
               return (
                 <Link
                   href={`/blog/${item?.slug}`}
