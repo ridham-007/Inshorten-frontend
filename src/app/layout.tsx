@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import Header from "./_header/page";
 import Footer from "./_footer/page";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 
 const inter = Montserrat({ subsets: ["latin"] });
@@ -15,7 +16,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={"en"} suppressHydrationWarning>
-      <head></head>
+      <head>
+        <Script
+          id="gpt-script-bottom"
+          strategy="afterInteractive"
+          async
+          crossOrigin="anonymous"
+          type="module"
+        >
+          {`
+            var anchorSlot_2;
+            window.googletag = window.googletag || {};
+            window.googletag.cmd = window.googletag.cmd || [];
+
+            googletag.cmd.push(function() {
+              anchorSlot_2 = googletag.defineSlot('/23128577529/inshorten.com_Anchor', [[300, 50], [320, 100], [320, 50], 'fluid', [300, 100]], 'div-gpt-ad-1732541990608-0').addService(googletag.pubads());
+              googletag.pubads().enableSingleRequest();
+              googletag.enableServices();
+              googletag.display(anchorSlot_2);
+            });
+          `}
+        </Script>
+      </head>
       <body
         className={`${inter.className} flex w-full max-w-[1440px] mx-auto min-h-dvh overflow-auto`}
         suppressHydrationWarning={true}
