@@ -46,7 +46,13 @@ export default function RootLayout({
             });
           `}
         </Script>
-        <Script>
+        <Script
+           id="gpt-script-banner"
+           strategy="afterInteractive"
+           async
+           crossOrigin="anonymous"
+           type="module"
+        >
           {`
             window.googletag = window.googletag || {cmd: []};
             googletag.cmd.push(function() {
