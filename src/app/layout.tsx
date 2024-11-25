@@ -18,6 +18,14 @@ export default function RootLayout({
     <html lang={"en"} suppressHydrationWarning>
       <head>
         <Script
+          async
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          strategy="afterInteractive"
+          onReady={() => {
+            // handleBannerLoad();
+          }}
+        />
+        <Script
           id="gpt-script-bottom"
           strategy="afterInteractive"
           async
