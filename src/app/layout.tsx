@@ -38,7 +38,8 @@ export default function RootLayout({
             window.googletag.cmd = window.googletag.cmd || [];
 
             window.googletag.cmd.push(function() {
-              anchorSlot_2 = googletag.defineSlot('/23128577529/inshorten.com_Anchor', [[300, 50], [320, 100], [320, 50], 'fluid', [300, 100]], 'div-gpt-ad-1732541990608-0').addService(googletag.pubads());
+              anchorSlot_2 = googletag.defineSlot('/23128577529/inshorten.com_Anchor', [[300, 50], [320, 100], [320, 50], 'fluid', [300, 100]], 'div-gpt-ad-1732541990608-0');
+              anchorSlot_2.addService(googletag.pubads());
               window.googletag.pubads().enableSingleRequest();
               window.googletag.enableServices();
               window.googletag.display(anchorSlot_2);
