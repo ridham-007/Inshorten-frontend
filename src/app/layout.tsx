@@ -72,9 +72,9 @@ export default function RootLayout({
         <div className="flex flex-col w-full px-3 sm:px-10">
           <Header />
           <div id='div-gpt-ad-1732541591461-0' style={{minWidth: '250px',minHeight: '250px'}}>
-            <script>
+            <Script>
               {`googletag.cmd.push(function() { googletag.display('div-gpt-ad-1732541591461-0'); });`}
-            </script>
+            </Script>
           </div>
           <div className="flex flex-col w-full flex-1">
             {children}
