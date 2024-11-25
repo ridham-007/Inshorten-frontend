@@ -1,4 +1,5 @@
 google.com, pub-5880806861967329, DIRECT, f08c47fec0942fa0
+google.com, pub-4132227029163795, DIRECT, f08c47fec0942fa0
 #TopNotchads
 smartadline.com, 5658203193, DIRECT
 smartadline.com, 23138113502, DIRECT
