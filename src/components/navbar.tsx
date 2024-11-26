@@ -51,7 +51,7 @@ export default function Navbar(props: NavbarProps) {
               key={`desktop-nav-${index}`}
               href={tab.href}
               target="_blank"
-              className="hidden md:flex p-2 mr-5 rounded-md capitalize hover:text-[#0B80E0] cursor-pointer"
+              className="nav-link hidden md:flex p-2 mr-5 rounded-md capitalize hover:text-[#0B80E0] cursor-pointer"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey) {
                   e.preventDefault();
