@@ -65,8 +65,53 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   return (
     <main className="flex w-full flex-col flex-wrap gap-24 my-14">
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          padding: "20px 0px",
+          minHeight: "250px",
+          gap: "50px",
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+      >
+        <div id="div-gpt-ad-1732541591461-0"></div>
+        <div id="div-gpt-ad-1732541591461-1"></div>
+      </div>
       <Information />
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          padding: "20px 0px",
+          minHeight: "250px",
+          gap: "50px",
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+      >
+        <div id="div-gpt-ad-1732541591461-2"></div>
+        <div id="div-gpt-ad-1732541591461-3"></div>
+      </div>
       <Feature />
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          padding: "20px 0px",
+          minHeight: "250px",
+          gap: "50px",
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+      >
+        <div id="div-gpt-ad-1732541591461-4"></div>
+        <div id="div-gpt-ad-1732541591461-5"></div>
+      </div>
     </main>
   );
 }
