@@ -202,7 +202,6 @@
   
       // Add some mouse movements
       const moveEvent = new MouseEvent('mousemove', {
-        view: window,
         bubbles: true,
         cancelable: true,
         clientX: element.getBoundingClientRect().left + randomDelay(0, 5),
