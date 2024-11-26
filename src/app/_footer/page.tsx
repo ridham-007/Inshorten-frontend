@@ -91,7 +91,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   key={index}
-                  className=" hover:text-[#0B80E0] hover:underline !text-nowrap "
+                  className="nav-link hover:text-[#0B80E0] hover:underline !text-nowrap "
                   onClick={(e) => {
                     if (!e.ctrlKey && !e.metaKey) {
                       e.preventDefault();
