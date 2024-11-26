@@ -22,11 +22,11 @@ const Blog = async () => {
         <div id="div-gpt-ad-1732541591461-0"></div>
         <div id="div-gpt-ad-1732541591461-1"></div>
       </div>
-      <Suspense fallback={<BlogBannerSkeleton />}>
+      {/* <Suspense fallback={<BlogBannerSkeleton />}>
         {(async function () {
           return <BlogBanner />;
         })()}
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={<CategoryBannerSkeleton />}>
         {(async function () {
           return <CategoryBanner />;

@@ -6,7 +6,7 @@ import ShowArticle, { ArticleSkeleton } from "@/components/show-article";
 import DynamicNewsWall, {
   DynamicNewsWallSkeleton,
 } from "@/components/blog-banner-side";
-const AdCustom = dynamic(() => import("@/components/AdCustom"), { ssr: false });
+// const AdCustom = dynamic(() => import("@/components/AdCustom"), { ssr: false });
 export async function generateMetadata(
   {
     params,
@@ -125,11 +125,6 @@ const Article = async (props: any) => {
             return <DynamicNewsWall title="Popular" start={0} end={6} />;
           })()}
         </Suspense>
-        <AdCustom
-          dataAdId={info.RESPONSIVE_ADS_4.id}
-          width={info.RESPONSIVE_ADS_4.width}
-          height={info.RESPONSIVE_ADS_4.height}
-        />
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           {(async function () {
             return <DynamicNewsWall title="Recent" start={6} />;

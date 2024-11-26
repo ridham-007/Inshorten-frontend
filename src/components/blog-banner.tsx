@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { info } from "@/utils/ads";
 import ImageWithFallback from "./image-with-fallback";
-const AdCustom = dynamic(() => import("./AdCustom"), { ssr: false });
 
 export interface BLogProps {
   articles: {
@@ -50,11 +49,6 @@ export const BlogBanner = () => {
         <>
           <>
             <div className="mt-4 ">
-              <AdCustom
-                dataAdId={info.RESPONSIVE_ADS_2.id}
-                width={info.RESPONSIVE_ADS_2.width}
-                height={info.RESPONSIVE_ADS_2.height}
-              />
               {/* <div className="w-full gap-[15px] flex flex-col p-[20px] rounded-xl mt-[40px]">
                 <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
                   <div className="flex flex-col sm:flex-row cursor-pointer basis-full flex-0 justify-around gap-[10px] blog-list bg-white">

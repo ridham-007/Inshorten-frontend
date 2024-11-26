@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-const AdCustom = dynamic(() => import("./AdCustom"), { ssr: false });
+// const AdCustom = dynamic(() => import("./AdCustom"), { ssr: false });
 
 import { info } from "@/utils/ads";
 import { useEffect, useState } from "react";
@@ -80,11 +80,6 @@ export default function CategoryBanner() {
               );
             })}
           </div>
-          <AdCustom
-            dataAdId={info.RESPONSIVE_ADS_1.id}
-            width={info.RESPONSIVE_ADS_1.width}
-            height={info.RESPONSIVE_ADS_1.height}
-          />
         </>
       ) : (
         <CategoryBannerSkeleton />

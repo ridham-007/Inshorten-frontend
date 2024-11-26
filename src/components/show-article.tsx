@@ -54,11 +54,6 @@ const ShowArticle = ({ slug }: any) => {
 
   return !!article ? (
     <div className="article-container ">
-      <AdCustom
-        dataAdId={info.RESPONSIVE_ADS_3.id}
-        width={info.RESPONSIVE_ADS_3.width}
-        height={info.RESPONSIVE_ADS_3.height}
-      />
       <div className="flex flex-col pb-2 mb-2 border-b ">
         <h2 className="font-semibold py-1">{article?.title}</h2>
         <div className="flex w-[100%] justify-start gap-[10px] pb-0 items-center">
@@ -70,22 +65,17 @@ const ShowArticle = ({ slug }: any) => {
       {article?.content &&
         parser(article.content, {
           replace(domNode: any) {
-            if (domNode.attribs && domNode.attribs.id === "ads-div") {
-              return (
-                <AdCustom
-                  dataAdId={info.RESPONSIVE_ADS_2.id}
-                  width={info.RESPONSIVE_ADS_2.width}
-                  height={info.RESPONSIVE_ADS_2.height}
-                />
-              );
-            }
+            // if (domNode.attribs && domNode.attribs.id === "ads-div") {
+            //   return (
+            //     <AdCustom
+            //       dataAdId={info.RESPONSIVE_ADS_2.id}
+            //       width={info.RESPONSIVE_ADS_2.width}
+            //       height={info.RESPONSIVE_ADS_2.height}
+            //     />
+            //   );
+            // }
           },
         })}
-      <AdCustom
-        dataAdId={info.RESPONSIVE_ADS_1.id}
-        width={info.RESPONSIVE_ADS_1.width}
-        height={info.RESPONSIVE_ADS_1.height}
-      />
     </div>
   ) : (
     <ArticleSkeleton />
