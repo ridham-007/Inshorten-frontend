@@ -45,8 +45,8 @@ export default function RootLayout({
         <GoogleAnalytics gaId="G-Y2FCGQGZ8S" />
         <div className="flex flex-col w-full px-3 sm:px-10">
           <Header />
-          <div id="div-gpt-ad-1732541591461-0" style={{minWidth: '300px',minHeight: '250px'}}>
-          </div>
+          <div id="div-gpt-ad-1732541591461-0" style={{minWidth: '300px',minHeight: '250px'}}></div>
+          <div id="div-gpt-ad-1732541591461-1" style={{minWidth: '300px',minHeight: '250px'}}></div>
           <div className="flex flex-col w-full flex-1">
             {children}
           </div>
