@@ -82,7 +82,6 @@
     function simulateClick(element) {
       // console.log('Simulating click on element:', element);
       const mouseDownEvent = new MouseEvent('mousedown', {
-        view: window,
         bubbles: true,
         cancelable: true,
       });
@@ -90,7 +89,6 @@
       // console.log('MouseDown event dispatched');
   
       const mouseUpEvent = new MouseEvent('mouseup', {
-        view: window,
         bubbles: true,
         cancelable: true,
       });
