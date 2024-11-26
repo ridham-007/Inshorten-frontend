@@ -65,15 +65,30 @@ const ShowArticle = ({ slug }: any) => {
       {article?.content &&
         parser(article.content, {
           replace(domNode: any) {
-            // if (domNode.attribs && domNode.attribs.id === "ads-div") {
-            //   return (
-            //     <AdCustom
-            //       dataAdId={info.RESPONSIVE_ADS_2.id}
-            //       width={info.RESPONSIVE_ADS_2.width}
-            //       height={info.RESPONSIVE_ADS_2.height}
-            //     />
-            //   );
-            // }
+            if (domNode.attribs && domNode.attribs.id === "ads-div") {
+              return (
+                // <AdCustom
+                //   dataAdId={info.RESPONSIVE_ADS_2.id}
+                //   width={info.RESPONSIVE_ADS_2.width}
+                //   height={info.RESPONSIVE_ADS_2.height}
+                // />
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "center",
+                    padding: "20px 0px",
+                    minHeight: "250px",
+                    gap: "50px",
+                    flexWrap: "wrap",
+                    alignItems: "center",
+                  }}
+                >
+                  <div id="div-gpt-ad-1732541591461-0"></div>
+                  <div id="div-gpt-ad-1732541591461-1"></div>
+                </div>
+              );
+            }
           },
         })}
     </div>
