@@ -125,6 +125,21 @@ const Article = async (props: any) => {
             return <DynamicNewsWall title="Popular" start={0} end={6} />;
           })()}
         </Suspense>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            padding: "20px 0px",
+            minHeight: "250px",
+            gap: "50px",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <div id="div-gpt-ad-1732541591461-6"></div>
+          <div id="div-gpt-ad-1732541591461-7"></div>
+        </div>
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           {(async function () {
             return <DynamicNewsWall title="Recent" start={6} />;
