@@ -145,7 +145,6 @@ const Article = async (props: any) => {
           }}
         >
           <div id="div-gpt-ad-1732541591461-4"></div>
-          <div id="div-gpt-ad-1732541591461-5"></div>
         </div>
       </section>
 
@@ -167,8 +166,7 @@ const Article = async (props: any) => {
             alignItems: "center",
           }}
         >
-          <div id="div-gpt-ad-1732541591461-6"></div>
-          <div id="div-gpt-ad-1732541591461-7"></div>
+          <div id="div-gpt-ad-1732541591461-5"></div>
         </div>
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           {(async function () {

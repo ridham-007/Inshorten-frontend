@@ -5,8 +5,6 @@ const ADS_TO_LOAD = [
   "div-gpt-ad-1732541591461-3",
   "div-gpt-ad-1732541591461-4",
   "div-gpt-ad-1732541591461-5",
-  "div-gpt-ad-1732541591461-6",
-  "div-gpt-ad-1732541591461-7",
 ];
 
 const BOTTOM_AD = "div-gpt-ad-1732541990608-0";
