@@ -17,7 +17,7 @@ const Blog = async () => {
           gap: "50px",
           flexWrap: "wrap",
           alignItems: "center",
-          pointerEvents: "none",
+          ""
         }}
       >
         <div id="div-gpt-ad-1732541591461-0"></div>
@@ -43,7 +43,7 @@ const Blog = async () => {
           gap: "50px",
           flexWrap: "wrap",
           alignItems: "center",
-          pointerEvents: "none",
+          ""
         }}
       >
         <div id="div-gpt-ad-1732541591461-2"></div>

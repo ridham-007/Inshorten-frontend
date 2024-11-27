@@ -75,7 +75,6 @@ export default async function Home() {
           gap: "50px",
           flexWrap: "wrap",
           alignItems: "center",
-          pointerEvents: "none",
         }}
       >
         <div id="div-gpt-ad-1732541591461-0"></div>
@@ -92,7 +91,6 @@ export default async function Home() {
           gap: "50px",
           flexWrap: "wrap",
           alignItems: "center",
-          pointerEvents: "none",
         }}
       >
         <div id="div-gpt-ad-1732541591461-2"></div>
@@ -109,7 +107,6 @@ export default async function Home() {
           gap: "50px",
           flexWrap: "wrap",
           alignItems: "center",
-          pointerEvents: "none",
         }}
       >
         <div id="div-gpt-ad-1732541591461-4"></div>

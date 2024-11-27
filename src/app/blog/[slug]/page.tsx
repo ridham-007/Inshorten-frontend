@@ -122,7 +122,6 @@ const Article = async (props: any) => {
             gap: "50px",
             flexWrap: "wrap",
             alignItems: "center",
-            pointerEvents: "none",
           }}
         >
           <div id="div-gpt-ad-1732541591461-2"></div>
@@ -143,7 +142,6 @@ const Article = async (props: any) => {
             gap: "50px",
             flexWrap: "wrap",
             alignItems: "center",
-            pointerEvents: "none",
           }}
         >
           <div id="div-gpt-ad-1732541591461-4"></div>
@@ -166,7 +164,6 @@ const Article = async (props: any) => {
             gap: "50px",
             flexWrap: "wrap",
             alignItems: "center",
-            pointerEvents: "none",
           }}
         >
           <div id="div-gpt-ad-1732541591461-5"></div>
