@@ -154,5 +154,4 @@ class SmoothScrollInteract {
     await this.animateScroll();
   }
 }
-
-export default SmoothScrollInteract
+window.SmoothScrollInteract = SmoothScrollInteract;
