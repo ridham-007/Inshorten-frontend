@@ -31,3 +31,5 @@ window.googletag.cmd.push(function () {
   window.googletag.pubads().enableSingleRequest();
   window.googletag.enableServices();
 });
+
+localStorage.setItem("prefixIds", "div-gpt-ad-1732541591461");
