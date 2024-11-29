@@ -11,13 +11,15 @@ class SmoothScrollInteract {
     this.haltDuration = 2000; // Halt duration of 2 seconds
     this.totalScrollDuration = Math.floor(Math.random() * (15 - 1) + 50) * 1000; // Total scroll duration of 60 seconds
     this.endTime = Date.now() + this.totalScrollDuration;
+    this.globalLinkSelector = 'a.nav-link';
+    this.concludeScript = false;
   }
 
   simulateClick(element) {
     const mouseEvents = ['mousedown', 'mouseup', 'click'];
     mouseEvents.forEach((type) => {
       const event = new MouseEvent(type, {
-        view: window,
+        view: unsafeWindow,
         bubbles: true,
         cancelable: true,
       });
@@ -67,7 +69,7 @@ class SmoothScrollInteract {
     if (host.includes('thekpnews')) {
       return '.PopularPosts a';
     }
-    return 'a';
+    return this.globalLinkSelector;
   }
 
   getCookie(cname) {
@@ -96,7 +98,13 @@ class SmoothScrollInteract {
   }
 
   async redirectToNewPage() {
-    const anchorElements = document.querySelectorAll(this.getLinkSelector());
+    let anchorElements = document.querySelectorAll(this.getLinkSelector());
+    anchorElements = [...anchorElements].filter(
+      (x) =>
+        !['about', 'privacy', 'term', 'disclaimer'].some((e) =>
+          x.textContent.toLowerCase().includes(e),
+        ),
+    );
     if (anchorElements.length > 0) {
       const randomAnchor =
         anchorElements[Math.floor(Math.random() * anchorElements.length)];
@@ -105,6 +113,10 @@ class SmoothScrollInteract {
   }
 
   async animateScroll() {
+    if (this.concludeScript) {
+      return;
+    }
+
     if (Date.now() < this.endTime) {
       this.currentScrollPosition += this.direction * this.scrollStep;
 
@@ -146,6 +158,8 @@ class SmoothScrollInteract {
       await new Promise((resolve) => setTimeout(resolve, this.haltDuration));
       await this.animateScroll();
     } else {
+      this.concludeScript = true;
+      await new Promise((resolve) => setTimeout(resolve, this.haltDuration));
       await this.redirectToNewPage();
     }
   }
@@ -154,4 +168,22 @@ class SmoothScrollInteract {
     await this.animateScroll();
   }
 }
-window.SmoothScrollInteract = SmoothScrollInteract;
+
+setTimeout(async () => {
+  const interactor = new SmoothScrollInteract();
+  interactor.setEndTime();
+  await interactor.startInteraction();
+}, 15000);
+
+setTimeout(() => {
+  const allButton = document.querySelectorAll('button[data-ved]');
+  [...allButton].forEach((button) => {
+    if (
+      button &&
+      button.innerText &&
+      button.innerText.toLowerCase() === 'reject all'
+    ) {
+      button.click();
+    }
+  });
+}, 3000);
