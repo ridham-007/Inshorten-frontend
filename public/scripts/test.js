@@ -19,7 +19,8 @@ class SmoothScrollInteract {
     const mouseEvents = ['mousedown', 'mouseup', 'click'];
     mouseEvents.forEach((type) => {
       const event = new MouseEvent(type, {
-        view: unsafeWindow,
+         // view: unsafeWindow, // This is important, if we don't set the view, from direct script
+         view: window, // This is important, if we don't set the view, from server script
         bubbles: true,
         cancelable: true,
       });
