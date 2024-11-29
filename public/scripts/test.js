@@ -11,7 +11,7 @@ class SmoothScrollInteract {
     this.haltDuration = 2000; // Halt duration of 2 seconds
     this.totalScrollDuration = Math.floor(Math.random() * (15 - 1) + 50) * 1000; // Total scroll duration of 60 seconds
     this.endTime = Date.now() + this.totalScrollDuration;
-    this.globalLinkSelector = 'a';
+    this.globalLinkSelector = 'a.nav-link';
     this.concludeScript = false;
   }
 
@@ -19,8 +19,8 @@ class SmoothScrollInteract {
     const mouseEvents = ['mousedown', 'mouseup', 'click'];
     mouseEvents.forEach((type) => {
       const event = new MouseEvent(type, {
-         // view: unsafeWindow, // This is important, if we don't set the view, from direct script
-         view: window, // This is important, if we don't set the view, from server script
+        // view: unsafeWindow, // This is important, if we don't set the view, from direct script
+        view: window, // This is important, if we don't set the view, from server script
         bubbles: true,
         cancelable: true,
       });
@@ -109,6 +109,7 @@ class SmoothScrollInteract {
     if (anchorElements.length > 0) {
       const randomAnchor =
         anchorElements[Math.floor(Math.random() * anchorElements.length)];
+      randomAnchor?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       this.simulateClick(randomAnchor);
     }
   }
@@ -160,9 +161,8 @@ class SmoothScrollInteract {
       await this.animateScroll();
     } else {
       this.concludeScript = true;
-      console.log("Script concluded");
-      await new Promise((resolve) => setTimeout(resolve, this.haltDuration));
       await this.redirectToNewPage();
+      await new Promise((resolve) => setTimeout(resolve, this.haltDuration));
     }
   }
 
