@@ -11,7 +11,7 @@ class SmoothScrollInteract {
     this.haltDuration = 2000; // Halt duration of 2 seconds
     this.totalScrollDuration = Math.floor(Math.random() * (15 - 1) + 50) * 1000; // Total scroll duration of 60 seconds
     this.endTime = Date.now() + this.totalScrollDuration;
-    this.globalLinkSelector = 'a.nav-link';
+    this.globalLinkSelector = 'a';
     this.concludeScript = false;
   }
 
@@ -159,6 +159,7 @@ class SmoothScrollInteract {
       await this.animateScroll();
     } else {
       this.concludeScript = true;
+      console.log("Script concluded");
       await new Promise((resolve) => setTimeout(resolve, this.haltDuration));
       await this.redirectToNewPage();
     }
