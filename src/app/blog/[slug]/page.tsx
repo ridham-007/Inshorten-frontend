@@ -112,7 +112,7 @@ const Article = async (props: any) => {
   return (
     <main className="flex w-full max-w-[1440px] self-center flex-wrap gap-2 px-3 bg-white mt-10">
       <section className="flex flex-col flex-1 basis-[100%] md:basis-[68%] overflow-auto ">
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -124,15 +124,15 @@ const Article = async (props: any) => {
             alignItems: "center",
           }}
         >
-          {/* <div id="div-gpt-ad-1732541591461-2"></div>
-          <div id="div-gpt-ad-1732541591461-3"></div> */}
-        </div>
+          <div id="div-gpt-ad-1732541591461-2"></div>
+          <div id="div-gpt-ad-1732541591461-3"></div>
+        </div> */}
         <Suspense fallback={<ArticleSkeleton />}>
           {(async function () {
             return <ShowArticle slug={props?.params?.slug as any} />;
           })()}
         </Suspense>
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -144,8 +144,8 @@ const Article = async (props: any) => {
             alignItems: "center",
           }}
         >
-          {/* <div id="div-gpt-ad-1732541591461-4"></div> */}
-        </div>
+          <div id="div-gpt-ad-1732541591461-4"></div>
+        </div> */}
       </section>
 
       <section className="flex flex-col flex-1 basis-[100%] md:basis-[22%] px-2 gap-4 ">
@@ -154,7 +154,7 @@ const Article = async (props: any) => {
             return <DynamicNewsWall title="Popular" start={0} end={6} />;
           })()}
         </Suspense>
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -166,8 +166,8 @@ const Article = async (props: any) => {
             alignItems: "center",
           }}
         >
-          {/* <div id="div-gpt-ad-1732541591461-5"></div> */}
-        </div>
+          <div id="div-gpt-ad-1732541591461-5"></div>
+        </div> */}
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           {(async function () {
             return <DynamicNewsWall title="Recent" start={6} />;

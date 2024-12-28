@@ -72,21 +72,22 @@ const ShowArticle = ({ slug }: any) => {
                 //   width={info.RESPONSIVE_ADS_2.width}
                 //   height={info.RESPONSIVE_ADS_2.height}
                 // />
-                <div
-                  style={{
-                    display: "flex",
-                    width: "100%",
-                    justifyContent: "center",
-                    padding: "20px 0px",
-                    minHeight: "250px",
-                    gap: "50px",
-                    flexWrap: "wrap",
-                    alignItems: "center",
-                  }}
-                >
-                  {/* <div id="div-gpt-ad-1732541591461-0"></div>
-                  <div id="div-gpt-ad-1732541591461-1"></div> */}
-                </div>
+                <div> </div>
+                // <div
+                //   style={{
+                //     display: "flex",
+                //     width: "100%",
+                //     justifyContent: "center",
+                //     padding: "20px 0px",
+                //     minHeight: "250px",
+                //     gap: "50px",
+                //     flexWrap: "wrap",
+                //     alignItems: "center",
+                //   }}
+                // >
+                //   <div id="div-gpt-ad-1732541591461-0"></div>
+                //   <div id="div-gpt-ad-1732541591461-1"></div>
+                // </div>
               );
             }
           },

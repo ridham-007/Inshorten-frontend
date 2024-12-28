@@ -43,7 +43,7 @@ const DynamicUrlLayout = () => {
   return (
     <>
       <div className="flex flex-col w-full gap-12 my-14">
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -55,11 +55,11 @@ const DynamicUrlLayout = () => {
             alignItems: "center",
           }}
         >
-          {/* <div id="div-gpt-ad-1732541591461-0"></div>
-          <div id="div-gpt-ad-1732541591461-1"></div> */}
-        </div>
+          <div id="div-gpt-ad-1732541591461-0"></div>
+          <div id="div-gpt-ad-1732541591461-1"></div>
+        </div> */}
         <DynamicUrl />
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -71,9 +71,9 @@ const DynamicUrlLayout = () => {
             alignItems: "center",
           }}
         >
-          {/* <div id="div-gpt-ad-1732541591461-2"></div>
-          <div id="div-gpt-ad-1732541591461-3"></div> */}
-        </div>
+          <div id="div-gpt-ad-1732541591461-2"></div>
+          <div id="div-gpt-ad-1732541591461-3"></div>
+        </div> */}
         <Content
           title="A fast and simple Dynamic URL shortener"
           description=" Long links in social networks look awful, additionally, the system
@@ -83,7 +83,7 @@ const DynamicUrlLayout = () => {
               you will also receive - regardless of where you place the link -
               in Facebook, Telegram or Twitter. Wrap in your short link."
         />
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -95,9 +95,9 @@ const DynamicUrlLayout = () => {
             alignItems: "center",
           }}
         >
-          {/* <div id="div-gpt-ad-1732541591461-4"></div>
-          <div id="div-gpt-ad-1732541591461-5"></div> */}
-        </div>
+          <div id="div-gpt-ad-1732541591461-4"></div>
+          <div id="div-gpt-ad-1732541591461-5"></div>
+        </div> */}
       </div>
     </>
   );
