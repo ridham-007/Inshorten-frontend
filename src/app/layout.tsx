@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang={"en"} suppressHydrationWarning>
       <head>
-        <Script
+        {/* <Script
           async
           src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
           strategy="beforeInteractive"
@@ -29,7 +29,7 @@ export default function RootLayout({
            async
            crossOrigin="anonymous"
            type="module"
-        ></Script>
+        ></Script> */}
       </head>
       <body
         className={`${inter.className} flex w-full max-w-[1440px] mx-auto min-h-dvh overflow-auto`}
@@ -50,14 +50,14 @@ export default function RootLayout({
           </div>
           <Footer />
         </div>
-        <Script
+        {/* <Script
            id="gpt-script-displaying"
            strategy="afterInteractive"
            src="/scripts/displayads.js"
            async
            crossOrigin="anonymous"
            type="module"
-        ></Script>
+        ></Script> */}
       </body>
     </html>
   );

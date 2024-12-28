@@ -54,8 +54,8 @@ const StaticUrlLayout = () => {
           alignItems: "center",
         }}
       >
-        <div id="div-gpt-ad-1732541591461-0"></div>
-        <div id="div-gpt-ad-1732541591461-1"></div>
+        {/* <div id="div-gpt-ad-1732541591461-0"></div>
+        <div id="div-gpt-ad-1732541591461-1"></div> */}
       </div>
       <StaticUrl />
       <div
@@ -70,8 +70,8 @@ const StaticUrlLayout = () => {
           alignItems: "center",
         }}
       >
-        <div id="div-gpt-ad-1732541591461-2"></div>
-        <div id="div-gpt-ad-1732541591461-3"></div>
+        {/* <div id="div-gpt-ad-1732541591461-2"></div>
+        <div id="div-gpt-ad-1732541591461-3"></div> */}
       </div>
       <Content
         title="A fast and simple URL shortener"
@@ -89,8 +89,8 @@ const StaticUrlLayout = () => {
           alignItems: "center",
         }}
       >
-        <div id="div-gpt-ad-1732541591461-4"></div>
-        <div id="div-gpt-ad-1732541591461-5"></div>
+        {/* <div id="div-gpt-ad-1732541591461-4"></div>
+        <div id="div-gpt-ad-1732541591461-5"></div> */}
       </div>
     </div>
   );

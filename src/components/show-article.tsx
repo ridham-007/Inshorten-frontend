@@ -84,8 +84,8 @@ const ShowArticle = ({ slug }: any) => {
                     alignItems: "center",
                   }}
                 >
-                  <div id="div-gpt-ad-1732541591461-0"></div>
-                  <div id="div-gpt-ad-1732541591461-1"></div>
+                  {/* <div id="div-gpt-ad-1732541591461-0"></div>
+                  <div id="div-gpt-ad-1732541591461-1"></div> */}
                 </div>
               );
             }
