@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { RiFacebookFill, RiLinkedinFill } from "react-icons/ri";
 import { BsInstagram } from "react-icons/bs";
 import { FaRegCopyright, FaXTwitter, FaYoutube } from "react-icons/fa6";
@@ -8,6 +8,8 @@ import Image from "next/image";
 
 export default function Footer() {
   const router = useRouter();
+  const fullUrl = usePathname();
+
   const navData = [
     { title: "Blog", href: "/blog" },
     { title: "Disclaimer", href: "/disclaimer" },
@@ -47,11 +49,17 @@ export default function Footer() {
     { label: "Dynamic URL", url: "url-shortening-service" },
     { label: "QR Code", url: "generate-qr-codes" },
   ];
+  const authRoutes = [
+    "privacypolicy-SARVESHWAR-FOODS-LIMITED"
+  ];
+  const visibilityFilterForFooter =
+    fullUrl && authRoutes.some((v) => fullUrl.includes(v));
+
   return (
     <footer
       key={Math.random()}
       id="footer"
-      className={`flex flex-col h-auto w-full bg-[#fff] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md p-7`}
+      className={`${visibilityFilterForFooter ? "hidden" : "flex"} flex flex-col h-auto w-full bg-[#fff] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md p-7`}
     >
       <div className="flex flex-col w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:sm:grid-cols-4 w-full lg:justify-between gap-5 lg:gap-16 ">
