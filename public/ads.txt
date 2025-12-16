@@ -1,3 +1,4 @@
+google.com, pub-5880806861967329, DIRECT, f08c47fec0942fa0
 OWNERDOMAIN= inshorten.com
 MANAGERDOMAIN= anymanager.io 
 anymanager.io,3899, DIRECT
@@ -2162,3 +2163,4 @@ mediafuse.com, 729, RESELLER
 triplelift.com, 11817, RESELLER, 6c33edb13117fd86
 triplelift.com, 13262, RESELLER, 6c33edb13117fd86
 triplelift.com, 13262-EB, RESELLER, 6c33edb13117fd86
+
