@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 **Install dependencies:**
 
-```npm install```
+```npm install``` or ``` yarn install```
 
 First, run the development server:
 
@@ -20,7 +20,7 @@ bun dev
 
 **To build the App**
 
-```npm run build```
+```npm run build``` or ``` yarn build```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
