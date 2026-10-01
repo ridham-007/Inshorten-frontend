@@ -2,6 +2,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+**Tech Stack**
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Any database/API/service you use
+
 **Install dependencies:**
 
 ```npm install``` or ``` yarn install```
